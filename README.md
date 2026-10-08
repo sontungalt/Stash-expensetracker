@@ -10,7 +10,7 @@ Grab **ExpenseTracker.ipa** from the [latest release](../../releases/latest). It
 - **[AltStore](https://altstore.io)**: install AltServer on your computer, then open the `.ipa` in AltStore on the phone.
 
 Then on the iPhone: **Settings → General → VPN & Device Management →** trust your Apple ID, and enable **Settings → Privacy & Security → Developer Mode**.
-Free Apple IDs expire after 7 days (re-sideload to refresh). Liquid Glass needs iOS 26+; older iOS gets a blur look. Data is stored on the device only.
+Free Apple IDs expire after 7 days (re-sideload to refresh). Requires iOS 16.4+. Liquid Glass needs iOS 26+; older iOS gets a blur look. Data is stored on the device only.
 
 ## Web version
 
