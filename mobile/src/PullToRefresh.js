@@ -12,7 +12,7 @@ import { useTheme } from './theme'
  * iOS already rubber-bands the scroll view, so the damping curve is native; we only read the offset.
  */
 const wait = (ms) => new Promise((r) => setTimeout(r, ms))
-const LABEL = { idle: 'Pull to refresh', pulling: 'Pull to refresh', ready: 'Release to refresh', refreshing: 'Refreshing…', complete: 'Updated' }
+const LABEL = { idle: 'Pull to refresh', pulling: 'Pull to refresh', ready: 'Release to refresh', refreshing: 'Refreshing…', complete: 'Updated', failed: 'Could not refresh' }
 const SPRING = { stiffness: 300, damping: 26, useNativeDriver: true }
 
 export function usePullToRefresh(onRefresh, { threshold = 68, maxPull = 110 } = {}) {
@@ -26,7 +26,7 @@ export function usePullToRefresh(onRefresh, { threshold = 68, maxPull = 110 } = 
   const [onScroll] = useState(() => Animated.event([{ nativeEvent: { contentOffset: { y } } }], { useNativeDriver: true }))
   useEffect(() => {
     const id = y.addListener(({ value }) => {
-      if (st.current === 'refreshing' || st.current === 'complete') return
+      if (st.current === 'refreshing' || st.current === 'complete' || st.current === 'failed') return
       const d = -value
       const next = d >= threshold ? 'ready' : d > 6 ? 'pulling' : 'idle'
       if (next === st.current) return
@@ -41,9 +41,14 @@ export function usePullToRefresh(onRefresh, { threshold = 68, maxPull = 110 } = 
     set('refreshing')
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(() => {})
     Animated.spring(pin, { toValue: 1, ...SPRING }).start()
-    try { await Promise.all([onRefresh?.(), wait(900)]) } catch { /* keep the UI responsive even if refresh fails */ }
-    set('complete')
-    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => {})
+    try {
+      await Promise.all([onRefresh?.(), wait(900)])
+      set('complete')
+      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => {})
+    } catch {
+      set('failed')
+      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error).catch(() => {})
+    }
     await wait(750)
     Animated.spring(pin, { toValue: 0, ...SPRING }).start()
     set('idle')
@@ -70,10 +75,11 @@ export function PullIndicator({ status, y, pin, threshold, maxPull }) {
 
   return (
     <Animated.View pointerEvents="none" style={[styles.wrap, { opacity, transform: [{ translateY: Animated.add(pullY, pinY) }, { scale }] }]}
-      accessible={status === 'refreshing' || status === 'complete'} accessibilityLiveRegion="polite" accessibilityLabel={LABEL[status]}>
+      accessible={status === 'refreshing' || status === 'complete' || status === 'failed'} accessibilityLiveRegion="polite" accessibilityLabel={LABEL[status]}>
       <Glass radius={22} frosted style={styles.pill}>
         <View style={styles.inner}>
           {status === 'refreshing' ? <ActivityIndicator size="small" color={t.accent} />
+            : status === 'failed' ? <Text style={{ color: t.danger, fontSize: 16, fontWeight: '800' }}>!</Text>
             : status === 'complete' ? <Text style={{ color: t.good, fontSize: 16, fontWeight: '800' }}>✓</Text>
             : <Animated.Text style={{ color: t.accent, fontSize: 15, fontWeight: '800', transform: [{ rotate: flip.interpolate({ inputRange: [0, 1], outputRange: ['0deg', '180deg'] }) }] }}>↓</Animated.Text>}
           <Text style={{ color: t.text, fontSize: 14, fontWeight: '700' }}>{LABEL[status]}</Text>

@@ -1,5 +1,5 @@
 import { Platform, StyleSheet, useColorScheme } from 'react-native'
-import { CATEGORIES } from './lib'
+import { CATEGORIES, INCOME_CATEGORIES } from './lib'
 
 // Categorical palette validated with the dataviz validator (adjacent CVD ΔE >= 8, normal-vision >= 19).
 const catLight = ['#2a78d6', '#eb6834', '#1baf7a', '#eda100', '#e87ba4', '#008300', '#4a3aa7', '#e34948']
@@ -23,13 +23,13 @@ const dark = {
 
 export const rounded = Platform.select({ ios: 'ui-rounded', default: undefined })
 
-export const ICONS = { Food: '🍜', Transport: '🚇', Housing: '🏠', Shopping: '🛍️', Entertainment: '🎬', Health: '💊', Bills: '💡', Other: '✨' }
+export const ICONS = { Food: '🍜', Transport: '🚇', Housing: '🏠', Shopping: '🛍️', Entertainment: '🎬', Health: '💊', Bills: '💡', Other: '✨', Allowance: '🎒', Salary: '💼', Gift: '🎁', Refund: '↩️' }
 
 export function useTheme() {
   const t = useColorScheme() === 'dark' ? dark : light
   return {
     ...t,
-    cat: (name) => t.cats[Math.max(0, CATEGORIES.indexOf(name))],
+    cat: (name) => (INCOME_CATEGORIES.includes(name) ? t.good : t.cats[Math.max(0, CATEGORIES.indexOf(name))]),
     card_: {
       backgroundColor: t.card, borderRadius: 24, borderWidth: StyleSheet.hairlineWidth, borderColor: t.border,
       shadowColor: t.shadow, shadowOpacity: t.shadowOpacity, shadowRadius: 20, shadowOffset: { width: 0, height: 8 },

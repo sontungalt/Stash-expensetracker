@@ -9,8 +9,8 @@ import { Backdrop, Glass } from './src/Glass'
 import History from './src/History'
 import OriginDropdown, { Chevron } from './src/OriginDropdown'
 import Overview from './src/Overview'
-import { usePressScale } from './src/hooks'
-import { money, monthKey, monthLabel, sampleExpenses } from './src/lib'
+import { MotionProvider, PopPressable, usePressScale, useReducedMotion } from './src/hooks'
+import { money, monthKey, monthLabel, recentExpenses, sampleExpenses } from './src/lib'
 import { useExpenses } from './src/store'
 import { rounded, useTheme } from './src/theme'
 
@@ -35,7 +35,14 @@ function TabBar({ tab, setTab, onAdd, bottom }) {
   const t = useTheme()
   const x = useRef(new Animated.Value(tab === 'overview' ? 0 : 1)).current
   const plus = usePressScale(0.88)
-  useEffect(() => { Animated.spring(x, { toValue: tab === 'overview' ? 0 : 1, useNativeDriver: true, speed: 18, bounciness: 9 }).start() }, [tab, x])
+  const reduced = useReducedMotion()
+  useEffect(() => {
+    const toValue = tab === 'overview' ? 0 : 1
+    if (reduced) { x.setValue(toValue); return }
+    const animation = Animated.spring(x, { toValue, useNativeDriver: true, speed: 18, bounciness: 9, isInteraction: false })
+    animation.start()
+    return () => animation.stop()
+  }, [tab, x, reduced])
   const go = (k) => { if (k !== tab) { Haptics.selectionAsync().catch(() => {}); setTab(k) } }
   const items = [['overview', 'Overview', GridIcon], ['history', 'Activity', ListIcon]]
 
@@ -44,10 +51,10 @@ function TabBar({ tab, setTab, onAdd, bottom }) {
       <Glass radius={33} interactive style={[styles.pill]}>
         <Animated.View style={[styles.indicator, { backgroundColor: t.accentSoft, transform: [{ translateX: x.interpolate({ inputRange: [0, 1], outputRange: [PAD, PILL_W - PAD - ITEM_W] }) }] }]} />
         {items.slice(0, 1).map(([k, label, Icon]) => (
-          <Pressable key={k} onPress={() => go(k)} style={styles.item} accessibilityRole="tab" accessibilityState={{ selected: tab === k }} accessibilityLabel={label}>
+          <PopPressable key={k} onPress={() => go(k)} style={styles.item} accessibilityRole="tab" accessibilityState={{ selected: tab === k }} accessibilityLabel={label}>
             <Icon c={tab === k ? t.accent : t.text2} />
             <Text style={[styles.itemTxt, { color: tab === k ? t.accent : t.text2 }]}>{label}</Text>
-          </Pressable>
+          </PopPressable>
         ))}
         <Pressable onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(() => {}); onAdd() }} onPressIn={plus.onPressIn} onPressOut={plus.onPressOut}
           accessibilityRole="button" accessibilityLabel="Add expense">
@@ -59,10 +66,10 @@ function TabBar({ tab, setTab, onAdd, bottom }) {
           </Animated.View>
         </Pressable>
         {items.slice(1).map(([k, label, Icon]) => (
-          <Pressable key={k} onPress={() => go(k)} style={styles.item} accessibilityRole="tab" accessibilityState={{ selected: tab === k }} accessibilityLabel={label}>
+          <PopPressable key={k} onPress={() => go(k)} style={styles.item} accessibilityRole="tab" accessibilityState={{ selected: tab === k }} accessibilityLabel={label}>
             <Icon c={tab === k ? t.accent : t.text2} />
             <Text style={[styles.itemTxt, { color: tab === k ? t.accent : t.text2 }]}>{label}</Text>
-          </Pressable>
+          </PopPressable>
         ))}
       </Glass>
     </View>
@@ -72,28 +79,47 @@ function TabBar({ tab, setTab, onAdd, bottom }) {
 function Shell() {
   const t = useTheme()
   const insets = useSafeAreaInsets()
-  const { expenses, ready, add, addMany, update, remove, reload } = useExpenses()
+  const { expenses, ready, loadError, retry, add, addMany, update, remove, reload } = useExpenses()
+  const loadingSample = useRef(false)
   const [tab, setTab] = useState('overview')
   const [selected, setSelected] = useState('all')
   const [sheet, setSheet] = useState({ open: false, editing: null })
 
   const scoped = useMemo(() => (selected === 'all' ? expenses : expenses.filter((e) => monthKey(e.date) === selected)), [expenses, selected])
   const months = useMemo(() => [...new Set(expenses.map((e) => monthKey(e.date)))].sort().reverse(), [expenses])
+  const recent = useMemo(() => recentExpenses(expenses), [expenses])
   const periodLabel = selected === 'all' ? 'All time' : monthLabel(selected, true)
 
   const open = (editing = null) => setSheet({ open: true, editing })
   const close = () => setSheet({ open: false, editing: null })
-  const save = (data) => {
-    sheet.editing ? update(sheet.editing.id, data) : add(data)
-    close()
+  const save = (data) => sheet.editing ? update(sheet.editing.id, data) : add(data)
+  const loadSample = async () => {
+    if (loadingSample.current) return
+    loadingSample.current = true
+    try { await addMany(sampleExpenses()) }
+    catch { Alert.alert('Could not save sample data', 'Please try again. Your expenses have not changed.') }
+    finally { loadingSample.current = false }
   }
   const del = (r) =>
     Alert.alert('Delete expense?', `${r.description} · ${money(r.amount)}`, [
       { text: 'Cancel', style: 'cancel' },
-      { text: 'Delete', style: 'destructive', onPress: () => { Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning).catch(() => {}); remove(r.id); close() } },
+      { text: 'Delete', style: 'destructive', onPress: async () => {
+        try {
+          await remove(r.id)
+          Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning).catch(() => {})
+          close()
+        } catch { Alert.alert('Could not delete expense', 'Your expense is still saved. Please try again.') }
+      } },
     ])
 
   if (!ready) return <View style={[styles.fill, { backgroundColor: t.bg, justifyContent: 'center' }]}><ActivityIndicator /></View>
+  if (loadError) return (
+    <View style={[styles.fill, { backgroundColor: t.bg, justifyContent: 'center', alignItems: 'center', padding: 28, gap: 16 }]}>
+      <Text style={{ color: t.text, fontSize: 20, fontWeight: '700' }} accessibilityRole="alert">Could not load your expenses</Text>
+      <Text style={{ color: t.text2, textAlign: 'center' }}>Your saved data has not been changed. Please try again.</Text>
+      <Pressable onPress={retry} accessibilityRole="button" style={{ padding: 16 }}><Text style={{ color: t.accent, fontSize: 17, fontWeight: '700' }}>Try again</Text></Pressable>
+    </View>
+  )
 
   return (
     <View style={[styles.fill, { paddingTop: insets.top }]}>
@@ -120,19 +146,19 @@ function Shell() {
 
       <View style={styles.fill}>
         {tab === 'overview'
-          ? <Overview expenses={expenses} selected={selected} onSelect={setSelected} onLoadSample={() => addMany(sampleExpenses())} onAdd={() => open()} onRefresh={reload} />
+          ? <Overview expenses={expenses} selected={selected} onSelect={setSelected} onLoadSample={loadSample} onAdd={() => open()} onRefresh={reload} />
           : <History rows={scoped} periodLabel={periodLabel} onEdit={open} onRefresh={reload} />}
       </View>
 
       <TabBar tab={tab} setTab={setTab} onAdd={() => open()} bottom={Math.max(insets.bottom, 12) + 4} />
-      <AddSheet visible={sheet.open} editing={sheet.editing} onClose={close} onSave={save} onDelete={del} />
+      <AddSheet visible={sheet.open} editing={sheet.editing} recent={recent} onClose={close} onSave={save} onDelete={del} />
       <StatusBar style="auto" />
     </View>
   )
 }
 
 export default function App() {
-  return <SafeAreaProvider><Shell /></SafeAreaProvider>
+  return <MotionProvider><SafeAreaProvider><Shell /></SafeAreaProvider></MotionProvider>
 }
 
 const styles = StyleSheet.create({

@@ -1,4 +1,32 @@
 export const CATEGORIES = ['Food', 'Transport', 'Housing', 'Shopping', 'Entertainment', 'Health', 'Bills', 'Other']
+export const INCOME_CATEGORIES = ['Allowance', 'Salary', 'Gift', 'Refund']
+
+/** Entries are expenses unless marked `kind: 'income'`, so data saved before income existed still works. */
+export const isIncome = (e) => e.kind === 'income'
+
+/** Accept a decimal point or comma, never partial numbers or grouping separators. */
+export function parseAmount(value) {
+  const text = String(value).trim()
+  if (!/^(?:\d+(?:[.,]\d{0,2})?|[.,]\d{1,2})$/.test(text)) return null
+  const [whole, fraction = ''] = text.replace(',', '.').split('.')
+  const cents = Number(whole || '0') * 100 + Number(fraction.padEnd(2, '0'))
+  return Number.isSafeInteger(cents) && cents > 0 ? cents / 100 : null
+}
+
+/** Most recent version of each description/category pair; never mutate history. */
+export function recentExpenses(expenses, limit = 6) {
+  const seen = new Set()
+  return [...expenses].sort((a, b) => b.date.localeCompare(a.date)).filter((e) => {
+    const key = JSON.stringify([isIncome(e), e.description.trim().toLowerCase(), e.category])
+    if (seen.has(key)) return false
+    seen.add(key)
+    return true
+  }).slice(0, limit)
+}
+
+export function repeatExpense(expense) {
+  return { description: expense.description, amount: String(expense.amount), category: expense.category, kind: isIncome(expense) ? 'income' : 'expense', date: todayISO() }
+}
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 const MONTHS_LONG = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
@@ -30,12 +58,22 @@ export const shiftMonth = (key, delta) => {
   return `${d.getFullYear()}-${pad(d.getMonth() + 1)}`
 }
 
-const r2 = (n) => Math.round(n * 100) / 100
+const r2 = (n) => Math.round(n * 100) / 100 + 0 // `+ 0` turns -0 into 0
 
-/** Last `n` months ending at `endKey`, zero-filled. */
+/** Money in, money out, and what is left (negative when over). */
+export function summarize(entries) {
+  let income = 0, spent = 0
+  for (const e of entries) {
+    if (isIncome(e)) income += e.amount
+    else spent += e.amount
+  }
+  return { income: r2(income), spent: r2(spent), net: r2(income - spent) }
+}
+
+/** Last `n` months ending at `endKey`, zero-filled; income is ignored. */
 export function monthlyTotals(expenses, endKey, n = 6) {
   const totals = {}
-  for (const e of expenses) totals[monthKey(e.date)] = (totals[monthKey(e.date)] || 0) + e.amount
+  for (const e of expenses.filter((x) => !isIncome(x))) totals[monthKey(e.date)] = (totals[monthKey(e.date)] || 0) + e.amount
   return Array.from({ length: n }, (_, i) => {
     const key = shiftMonth(endKey, i - (n - 1))
     return { key, label: MONTHS[Number(key.slice(5)) - 1], total: r2(totals[key] || 0) }
@@ -44,12 +82,13 @@ export function monthlyTotals(expenses, endKey, n = 6) {
 
 export function categoryTotals(expenses) {
   const totals = {}
-  for (const e of expenses) totals[e.category] = (totals[e.category] || 0) + e.amount
+  for (const e of expenses.filter((x) => !isIncome(x))) totals[e.category] = (totals[e.category] || 0) + e.amount
   return CATEGORIES.filter((c) => totals[c]).map((c) => ({ name: c, value: r2(totals[c]) })).sort((a, b) => b.value - a.value)
 }
 
 export function sampleExpenses() {
   const now = new Date()
+  /** @type {Array<[string, number, string, number]>} */
   const rows = [
     ['Groceries', 84.3, 'Food', 2], ['Coffee', 4.5, 'Food', 1], ['Dinner out', 46, 'Food', 9],
     ['Metro card', 40, 'Transport', 3], ['Ride share', 18.75, 'Transport', 12],

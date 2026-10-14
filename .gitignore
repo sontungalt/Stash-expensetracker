@@ -3,3 +3,16 @@ dist
 .venv
 __pycache__
 *.db
+.DS_Store
+
+# Private device recovery backups
+/recovery/
+
+# Native Xcode build products and local user state
+ios/build/
+ios/DerivedData/
+**/xcuserdata/
+*.xcuserstate
+
+# macOS Finder metadata
+.DS_Store

@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Stash animation sheet</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#2f62c9}a:hover{color:#1b3a7a}
+.lay{position:absolute;overflow:hidden}
+.lay img{position:absolute;display:block;max-width:none;pointer-events:none;user-select:none}
+.body{position:absolute;inset:0;transform-origin:50% 100%}
+.sh{transform-origin:50% 50%}
+.cell .anim{animation-duration:calc(var(--d) * var(--k, 1));animation-timing-function:ease-in-out;animation-iteration-count:infinite}
+.bg-checker .stage,.bg-checker .mini{background:repeating-conic-gradient(#efe7d8 0 25%, #faf6ef 0 50%) 0 0/16px 16px}
+.bg-cream .stage,.bg-cream .mini{background:#f8f4ec}
+.bg-night .stage,.bg-night .mini{background:#241d33}
+
+/* shared */
+.cell .p-eye0,.cell .p-eye1{animation-name:blink}
+@keyframes blink{0%,44%,52%,100%{transform:scaleY(1)}48%{transform:scaleY(.1)}}
+@keyframes twinkle{0%,100%{opacity:1;transform:scale(1) rotate(0)}25%{opacity:.3;transform:scale(.8) rotate(-8deg)}50%{opacity:1;transform:scale(1.15) rotate(0)}75%{opacity:.6;transform:scale(.95) rotate(8deg)}}
+@keyframes breathe{0%,100%{transform:scale(1,1)}50%{transform:scale(1.012,1.025)}}
+
+/* 01 happy: excited little bounces, paws flapping */
+.a-happy{--d:2.4s}
+.a-happy .body{animation-name:bounce2}
+.a-happy .sh{animation-name:shBounce}
+.a-happy .p-pawL{animation-name:flapL}
+.a-happy .p-pawR{animation-name:flapR}
+@keyframes bounce2{0%,50%,100%{transform:translateY(0) scale(1.03,.97)}25%,75%{transform:translateY(-7px) scale(.98,1.02)}}
+@keyframes shBounce{0%,50%,100%{transform:scaleX(1);opacity:1}25%,75%{transform:scaleX(.85);opacity:.7}}
+@keyframes flapL{0%,50%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-4px) rotate(-14deg)}}
+@keyframes flapR{0%,50%,100%{transform:translateY(0) rotate(0)}75%{transform:translateY(-4px) rotate(14deg)}}
+
+/* 02 stuffed: cheeks puff, paw pats the full cheek */
+.a-stuffed{--d:2.8s}
+.a-stuffed .body{animation-name:puff}
+.a-stuffed .p-pat{animation-name:pat}
+.a-stuffed .p-fx0,.a-stuffed .p-fx1{animation-name:twinkle}
+@keyframes puff{0%,100%{transform:scale(1,1)}25%{transform:scale(1.05,.97)}45%{transform:scale(.99,1.02)}}
+@keyframes pat{0%,40%,100%{transform:rotate(0) translateY(0)}50%,70%{transform:rotate(-16deg) translateY(-4px)}60%,80%{transform:rotate(-4deg) translateY(-1px)}}
+
+/* 03 waving: arm swings hello */
+.a-waving{--d:2s}
+.a-waving .p-arm{animation-name:wave}
+.a-waving .p-fx0{animation-name:waveLines}
+.a-waving .body{animation-name:leanHi}
+@keyframes wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-24deg)}40%,80%{transform:rotate(10deg)}}
+@keyframes waveLines{0%,100%{opacity:1;transform:translate(0,0)}20%,60%{opacity:.25;transform:translate(-3px,-2px)}40%,80%{opacity:1;transform:translate(2px,0)}}
+@keyframes leanHi{0%,100%{transform:rotate(0)}50%{transform:rotate(-2deg)}}
+
+/* 04 surprised: startle jump, shock lines pop, double blink */
+.a-surprised{--d:2.6s}
+.a-surprised .body{animation-name:startle}
+.a-surprised .sh{animation-name:shStartle}
+.a-surprised .p-eye0,.a-surprised .p-eye1{animation-name:blink2}
+.a-surprised .p-fx0,.a-surprised .p-fx1,.a-surprised .p-fx2{animation-name:shock}
+@keyframes startle{0%,8%,100%{transform:translateY(0) scale(1,1)}14%{transform:translateY(-16px) scale(.95,1.06)}26%{transform:translateY(-16px) scale(1,1)}36%{transform:translateY(0) scale(1.07,.93)}46%{transform:translateY(0) scale(1,1)}}
+@keyframes shStartle{0%,8%,36%,100%{transform:scaleX(1);opacity:1}18%,26%{transform:scaleX(.75);opacity:.5}}
+@keyframes blink2{0%,55%,61%,67%,73%,100%{transform:scaleY(1)}58%,70%{transform:scaleY(.1)}}
+@keyframes shock{0%,8%{opacity:0;transform:scale(.4)}14%{opacity:1;transform:scale(1.25)}24%,40%{opacity:1;transform:scale(1)}55%,100%{opacity:0;transform:scale(1)}}
+
+/* 05 thinking: taps chin, looks up, ? bobs */
+.a-thinking{--d:3.6s}
+.a-thinking .p-chin{animation-name:tapChin}
+.a-thinking .p-eye0,.a-thinking .p-eye1{animation-name:lookUp}
+.a-thinking .p-fx0{animation-name:qBob}
+.a-thinking .body{animation-name:ponder}
+@keyframes tapChin{0%,60%,100%{transform:rotate(0) translateY(0)}8%,24%,40%{transform:rotate(-10deg) translateY(-2px)}16%,32%,48%{transform:rotate(0) translateY(0)}}
+@keyframes lookUp{0%,8%,100%{transform:translate(0,0) scaleY(1)}18%,76%{transform:translate(2px,-3px) scaleY(1)}80%{transform:translate(1px,-1px) scaleY(.1)}86%{transform:translate(0,0) scaleY(1)}}
+@keyframes qBob{0%,100%{opacity:1;transform:translateY(0) rotate(0)}25%{transform:translateY(-6px) rotate(-8deg)}50%{opacity:.7;transform:translateY(0) rotate(0)}75%{transform:translateY(-6px) rotate(8deg)}}
+@keyframes ponder{0%,100%{transform:rotate(0)}50%{transform:rotate(2deg)}}
+
+/* 06 confused: head tilts side to side, ? wobbles, quick double blink */
+.a-confused{--d:3.2s}
+.a-confused .body{animation-name:tilt}
+.a-confused .p-eye0,.a-confused .p-eye1{animation-name:blinkFast}
+.a-confused .p-fx0{animation-name:qPop}
+@keyframes tilt{0%,100%{transform:rotate(0)}15%,40%{transform:rotate(-5deg)}55%,85%{transform:rotate(5deg)}}
+@keyframes blinkFast{0%,40%,46%,52%,100%{transform:scaleY(1)}43%,49%{transform:scaleY(.1)}}
+@keyframes qPop{0%,100%{transform:scale(1) rotate(0)}12%{transform:scale(1.25) rotate(-12deg)}24%{transform:scale(1) rotate(10deg)}36%,50%{transform:scale(1) rotate(0)}62%{transform:scale(1.25) rotate(12deg)}74%{transform:scale(1) rotate(-10deg)}86%{transform:scale(1) rotate(0)}}
+
+/* 07 counting: paw taps the calculator, eyes check the screen */
+.a-counting{--d:2.2s}
+.a-counting .p-tap{animation-name:tapCalc}
+.a-counting .p-calc{animation-name:calcBob}
+.a-counting .p-eye0,.a-counting .p-eye1{animation-name:checkCalc}
+@keyframes tapCalc{0%,70%,100%{transform:translate(0,0)}8%,24%,40%,56%{transform:translate(3px,3px) rotate(8deg)}16%,32%,48%,64%{transform:translate(0,0) rotate(0)}}
+@keyframes calcBob{0%,100%{transform:rotate(0) translateY(0)}8%,24%,40%,56%{transform:rotate(-2deg) translateY(1px)}16%,32%,48%,64%{transform:rotate(0) translateY(0)}}
+@keyframes checkCalc{0%,64%,100%{transform:translateY(0) scaleY(1)}10%,56%{transform:translate(2px,3px) scaleY(.85)}82%{transform:translateY(0) scaleY(.1)}86%{transform:translateY(0) scaleY(1)}}
+
+/* 08 logging: pencil scribbles across the notepad */
+.a-logging{--d:2.4s}
+.a-logging .p-pencil{animation-name:write}
+.a-logging .body{animation-name:headBob}
+@keyframes write{0%,100%{transform:translate(0,0) rotate(0)}10%{transform:translate(3px,1px) rotate(5deg)}20%{transform:translate(6px,0) rotate(0)}30%{transform:translate(9px,1px) rotate(5deg)}40%{transform:translate(12px,0) rotate(0)}52%{transform:translate(4px,4px) rotate(-4deg)}62%{transform:translate(7px,5px) rotate(5deg)}72%{transform:translate(10px,4px) rotate(0)}86%{transform:translate(2px,1px) rotate(-3deg)}}
+@keyframes headBob{0%,100%{transform:rotate(0)}25%{transform:rotate(-1deg)}75%{transform:rotate(1deg)}}
+
+/* 09 saving: coin drops into the backpack, sparkle */
+.a-saving{--d:2.8s}
+.a-saving .p-coin{animation-name:coinDrop}
+.a-saving .body{animation-name:hugNod}
+.a-saving .p-fx0,.a-saving .p-fx1{animation-name:saveSpark}
+@keyframes coinDrop{0%{opacity:0;transform:translate(0,-20px) scale(.9) rotate(-20deg)}12%{opacity:1;transform:translate(0,0) scale(1) rotate(0)}18%{transform:translate(0,-3px) scale(1)}24%,42%{opacity:1;transform:translate(0,0) scale(1)}56%{opacity:1;transform:translate(6px,18px) scale(.6) rotate(30deg)}62%,100%{opacity:0;transform:translate(7px,22px) scale(.4) rotate(40deg)}}
+@keyframes hugNod{0%,52%,80%,100%{transform:scale(1,1) translateY(0)}60%{transform:scale(1.04,.96) translateY(1px)}68%{transform:scale(.99,1.02) translateY(0)}}
+@keyframes saveSpark{0%,56%{opacity:0;transform:scale(.4)}64%{opacity:1;transform:scale(1.25)}76%{opacity:1;transform:scale(.95)}90%,100%{opacity:0;transform:scale(.6)}}
+
+/* 10 chart check: bars grow one by one, proud bounce */
+.a-chart{--d:3.2s}
+.a-chart .p-b1{animation-name:grow1}
+.a-chart .p-b2{animation-name:grow2}
+.a-chart .p-b3{animation-name:grow3}
+.a-chart .body{animation-name:proud}
+@keyframes grow1{0%,4%{transform:scaleY(.1)}16%,92%{transform:scaleY(1)}100%{transform:scaleY(.1)}}
+@keyframes grow2{0%,16%{transform:scaleY(.1)}28%,92%{transform:scaleY(1)}100%{transform:scaleY(.1)}}
+@keyframes grow3{0%,28%{transform:scaleY(.1)}40%,92%{transform:scaleY(1)}100%{transform:scaleY(.1)}}
+@keyframes proud{0%,44%,80%,100%{transform:scale(1,1) translateY(0)}54%{transform:scale(.98,1.04) translateY(-6px)}62%{transform:scale(1.04,.96) translateY(0)}70%{transform:scale(.99,1.02) translateY(-3px)}}
+
+/* 11 locked: shackle clicks shut */
+.a-locked{--d:2.6s}
+.a-locked .p-shackle{animation-name:clickShut}
+.a-locked .body{animation-name:clickSquash}
+@keyframes clickShut{0%,14%{transform:translateY(-8px)}28%{transform:translateY(1px)}32%,84%{transform:translateY(0)}100%{transform:translateY(-8px)}}
+@keyframes clickSquash{0%,26%,50%,100%{transform:scale(1,1)}32%{transform:scale(1.04,.95)}40%{transform:scale(.99,1.02)}}
+
+/* 12 goal reached: flag flaps, fist pumps on the coin pile */
+.a-goal{--d:2.2s}
+.a-goal .p-flag{animation-name:flagWave}
+.a-goal .p-arm{animation-name:cheer}
+.a-goal .p-fx0,.a-goal .p-fx1{animation-name:twinkle}
+.a-goal .body{animation-name:stand}
+@keyframes flagWave{0%,100%{transform:skewY(0) scaleX(1)}25%{transform:skewY(10deg) scaleX(.88)}50%{transform:skewY(0) scaleX(1)}75%{transform:skewY(-8deg) scaleX(.92)}}
+@keyframes cheer{0%,50%,100%{transform:rotate(0) translateY(0)}25%,75%{transform:rotate(-16deg) translateY(-3px)}}
+@keyframes stand{0%,50%,100%{transform:scale(1,1)}25%,75%{transform:scale(.99,1.02)}}
+
+/* 13 running low: eyes dart nervously, paws fidget, sweat drips */
+.a-low{--d:3s}
+.a-low .p-eye0,.a-low .p-eye1{animation-name:dart}
+.a-low .p-pawL{animation-name:fidL;animation-duration:calc(1s * var(--k, 1))}
+.a-low .p-pawR{animation-name:fidR;animation-duration:calc(1s * var(--k, 1))}
+.a-low .p-fx0{animation-name:drip}
+.a-low .body{animation-name:sway}
+@keyframes dart{0%,10%,45%,55%,90%,100%{transform:translateX(0)}18%,36%{transform:translateX(-3px)}64%,82%{transform:translateX(3px)}}
+@keyframes fidL{0%,50%,100%{transform:translate(0,0) rotate(0)}25%{transform:translate(2px,-1px) rotate(10deg)}}
+@keyframes fidR{0%,50%,100%{transform:translate(0,0) rotate(0)}75%{transform:translate(-2px,-1px) rotate(-10deg)}}
+@keyframes drip{0%{opacity:0;transform:translateY(-4px)}15%{opacity:1;transform:translateY(0)}70%{opacity:1;transform:translateY(14px)}90%,100%{opacity:0;transform:translateY(18px)}}
+@keyframes sway{0%,100%{transform:rotate(-1.5deg)}50%{transform:rotate(1.5deg)}}
+
+/* 14 broke: shakes the empty backpack, sighs */
+.a-broke{--d:3.6s}
+.a-broke .p-pack{animation-name:shakePack}
+.a-broke .p-fx0,.a-broke .p-fx1,.a-broke .p-fx2,.a-broke .p-fx3{animation-name:shakeLines}
+.a-broke .body{animation-name:sigh}
+@keyframes shakePack{0%,26%,66%,100%{transform:rotate(0) translateY(0)}30%,40%,50%{transform:rotate(-12deg) translateY(-3px)}35%,45%,55%{transform:rotate(9deg) translateY(-2px)}60%{transform:rotate(-3deg) translateY(0)}}
+@keyframes shakeLines{0%,28%,62%,100%{opacity:0}32%,58%{opacity:1}}
+@keyframes sigh{0%,62%,100%{transform:scale(1,1)}72%{transform:scale(1.04,.95)}86%{transform:scale(1,1)}}
+
+/* 15 overspent: fists shake, steaming, trembling */
+.a-over{--d:2s}
+.a-over .p-fistL{animation-name:fistShake}
+.a-over .p-fistR{animation-name:fistShake;animation-delay:calc(-.25s * var(--k, 1))}
+.a-over .body{animation-name:tremble}
+.a-over .p-fx1{animation-name:fume}
+.a-over .p-fx0{animation-name:dropL}
+.a-over .p-fx2,.a-over .p-fx3{animation-name:dropR}
+@keyframes fistShake{0%,50%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-5px) rotate(-6deg)}75%{transform:translateY(-5px) rotate(6deg)}}
+@keyframes tremble{0%,100%{transform:translateX(0)}10%,30%,50%,70%,90%{transform:translateX(-1.5px)}20%,40%,60%,80%{transform:translateX(1.5px)}}
+@keyframes fume{0%,100%{transform:rotate(0) scale(1)}25%{transform:rotate(-8deg) scale(1.05)}50%{transform:rotate(0) scale(.97)}75%{transform:rotate(8deg) scale(1.05)}}
+@keyframes dropL{0%{opacity:0;transform:translate(6px,4px) scale(.6)}20%{opacity:1;transform:translate(0,0) scale(1)}70%{opacity:1;transform:translate(-6px,4px)}100%{opacity:0;transform:translate(-9px,8px)}}
+@keyframes dropR{0%{opacity:0;transform:translate(-6px,4px) scale(.6)}20%{opacity:1;transform:translate(0,0) scale(1)}70%{opacity:1;transform:translate(6px,4px)}100%{opacity:0;transform:translate(9px,8px)}}
+
+/* 16 sleeping: blanket rises and falls, zzz drift up */
+.a-sleep{--d:4s}
+.a-sleep .p-blanket{animation-name:blanketBreath}
+.a-sleep .body{animation-name:breathe}
+.a-sleep .p-fx0{animation-name:zFloat}
+@keyframes blanketBreath{0%,100%{transform:scale(1,1)}50%{transform:scale(1.025,1.06)}}
+@keyframes zFloat{0%{opacity:0;transform:translate(-8px,12px) scale(.6)}20%{opacity:1;transform:translate(-4px,6px) scale(.85)}75%{opacity:1;transform:translate(2px,-4px) scale(1)}100%{opacity:0;transform:translate(6px,-12px) scale(1.1)}}
+
+/* 17 content: rubs paws happily, heart beats */
+.a-content{--d:2.8s}
+.a-content .p-paws{animation-name:rub}
+.a-content .p-fx0{animation-name:heartBeat}
+.a-content .body{animation-name:contentSway}
+@keyframes rub{0%,100%{transform:translateX(0) rotate(0)}25%{transform:translateX(-2px) rotate(-5deg)}75%{transform:translateX(2px) rotate(5deg)}}
+@keyframes heartBeat{0%,100%{transform:translateY(0) scale(1)}12%{transform:translateY(-2px) scale(1.22)}24%{transform:translateY(-2px) scale(1)}36%{transform:translateY(-3px) scale(1.18)}50%{transform:translateY(-4px) scale(1)}}
+@keyframes contentSway{0%,100%{transform:rotate(-1.5deg)}50%{transform:rotate(1.5deg)}}
+
+/* 18 monday refill: fists pump, confetti rains */
+.a-refill{--d:2.4s}
+.a-refill .p-fistL{animation-name:pumpL}
+.a-refill .p-fistR{animation-name:pumpR}
+.a-refill .body{animation-name:bounce2}
+.a-refill .sh{animation-name:shBounce}
+.a-refill .fxp{animation-name:fall;animation-timing-function:linear}
+@keyframes pumpL{0%,50%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-9px) rotate(-12deg)}}
+@keyframes pumpR{0%,50%,100%{transform:translateY(0) rotate(0)}75%{transform:translateY(-9px) rotate(12deg)}}
+@keyframes fall{0%{opacity:0;transform:translateY(-14px) rotate(0)}15%,80%{opacity:1}100%{opacity:0;transform:translateY(18px) rotate(60deg)}}
+</style>
+</helmet>
+<div class="sheet bg-{{bg}}" style="width: 1600px; height: 1400px; box-sizing: border-box; padding: 56px; background: #f8f4ec; color: #2b2118; font-family: 'IBM Plex Mono', monospace; display: flex; flex-direction: column; gap: 32px; --k: {{k}}">
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h1 style="margin: 0; font-family: 'Pixelify Sans', monospace; font-weight: 600; font-size: 64px; line-height: 1; color: #2b2118">Stash</h1>
+<p style="margin: 0; font-size: 15px; line-height: 1.5; color: #5c4a38">Animation sheet · 18 loops built from the original artwork</p>
+</div>
+<p style="margin: 0; max-width: 560px; font-size: 13px; line-height: 1.6; color: #6b5a48; text-align: right">Paws, props, eyes and effects move on their own. Press Play to run the loops; the canvas freezes motion while editing. Each card shows full size and a 44 px app-icon check.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 20px">
+<sc-for list="{{poses}}" as="item" hint-placeholder-count="18">
+<div class="cell a-{{item.key}}" style="background: #fffdf8; border: 1px solid #e9dfcd; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column">
+<div class="stage" style="height: 272px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 14px; box-sizing: border-box">
+<div style="position: relative; flex-shrink: 0; {{item.b.box}}">
+<sc-if value="{{item.hasSh}}" hint-placeholder-val="{{ true }}">
+<div class="lay sh anim" style="display: block; {{item.b.sh}}"><img src="./assets/fa28d32e56a095e8e8b56e017e175b19.png" alt="" style="display: block; {{item.b.shImg}}"></div>
+</sc-if>
+<div class="body anim">
+<div class="lay" style="display: block; {{item.b.main}}"><img src="./assets/e8b35306c9f0310f14a9cbfbb6a22773.png" alt="Stash, {{item.name}}" style="display: block; {{item.b.mainImg}}"></div>
+<sc-for list="{{item.b.parts}}" as="pt" hint-placeholder-count="3">
+<sc-if value="{{pt.isFx}}" hint-placeholder-val="{{ false }}">
+<div class="lay anim fxp p-{{pt.name}}" style="display: block; {{pt.box}}"><img src="./assets/688192c2e6e5653d31a2352393c1e0b9.png" alt="" style="display: block; {{pt.img}}"></div>
+</sc-if>
+<sc-if value="{{pt.isPart}}" hint-placeholder-val="{{ true }}">
+<div class="lay anim p-{{pt.name}}" style="display: block; {{pt.box}}"><img src="./assets/bbb03860f5392c103323ee7a3c040045.png" alt="" style="display: block; {{pt.img}}"></div>
+</sc-if>
+</sc-for>
+</div>
+</div>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-top: 1px solid #efe6d6">
+<div class="mini" style="width: 52px; height: 52px; border-radius: 12px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 4px; box-sizing: border-box; flex-shrink: 0; overflow: hidden">
+<div style="position: relative; flex-shrink: 0; {{item.m.box}}">
+<sc-if value="{{item.hasSh}}" hint-placeholder-val="{{ true }}">
+<div class="lay sh anim" style="display: block; {{item.m.sh}}"><img src="./assets/fa28d32e56a095e8e8b56e017e175b19.png" alt="" style="display: block; {{item.m.shImg}}"></div>
+</sc-if>
+<div class="body anim">
+<div class="lay" style="display: block; {{item.m.main}}"><img src="./assets/e8b35306c9f0310f14a9cbfbb6a22773.png" alt="" style="display: block; {{item.m.mainImg}}"></div>
+<sc-for list="{{item.m.parts}}" as="pt" hint-placeholder-count="3">
+<sc-if value="{{pt.isFx}}" hint-placeholder-val="{{ false }}">
+<div class="lay anim fxp p-{{pt.name}}" style="display: block; {{pt.box}}"><img src="./assets/688192c2e6e5653d31a2352393c1e0b9.png" alt="" style="display: block; {{pt.img}}"></div>
+</sc-if>
+<sc-if value="{{pt.isPart}}" hint-placeholder-val="{{ true }}">
+<div class="lay anim p-{{pt.name}}" style="display: block; {{pt.box}}"><img src="./assets/bbb03860f5392c103323ee7a3c040045.png" alt="" style="display: block; {{pt.img}}"></div>
+</sc-if>
+</sc-for>
+</div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px; min-width: 0">
+<div style="font-family: 'Pixelify Sans', monospace; font-size: 18px; line-height: 1.15; color: #2b2118">{{item.n}} {{item.name}}</div>
+<div style="font-size: 11px; line-height: 1.4; color: #6b5a48">{{item.when}} · {{item.dur}}</div>
+</div>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"speed":{"editor":"range","default":1,"min":0.5,"max":2,"step":0.25,"unit":"×","section":"Playback"},"backdrop":{"editor":"enum","default":"checker","options":["checker","cream","night"],"section":"Playback"},"$preview":{"width":1600,"height":1400}}'>
+class Component extends DCLogic {
+renderVals() {
+const speed = Number(this.props.speed ?? 1) || 1;
+const SW = 1344, SH = 896;
+const rows = [
+['happy', 'Happy', 'Healthy balance', '2.4 s', [32,82,169,185], [47,245,135,16]],
+['stuffed', 'Stuffed', 'Lots of allowance left', '2.8 s', [226,75,215,192], [260,245,140,16]],
+['waving', 'Waving', 'Hello / onboarding', '2.0 s', [462,78,204,190], [477,246,141,16]],
+['surprised', 'Surprised', 'Big purchase logged', '2.6 s', [690,45,168,223], [700,246,146,16]],
+['thinking', 'Thinking', 'Loading / syncing', '3.6 s', [907,37,175,231], [919,246,143,16]],
+['confused', 'Confused', 'Error / invalid input', '3.2 s', [1129,45,171,223], [1140,246,142,16]],
+['counting', 'Counting', 'Expense logged', '2.2 s', [25,344,169,186], [42,508,141,16]],
+['logging', 'Logging', 'Nudge to log', '2.4 s', [248,339,171,189], [258,506,143,16]],
+['saving', 'Saving', 'Income / under budget', '2.8 s', [441,336,200,194], [476,508,144,16]],
+['chart', 'Chart Check', 'Viewing stats', '3.2 s', [686,334,187,195], [696,507,150,17]],
+['locked', 'Locked', 'Budget locked', '2.6 s', [898,338,178,192], [916,508,147,16]],
+['goal', 'Goal Reached', 'Savings goal hit', '2.2 s', [1100,316,223,210], null],
+['low', 'Running Low', 'Under 20% left', '3.0 s', [32,608,168,192], [38,778,150,16]],
+['broke', 'Broke', '0% left', '3.6 s', [242,616,197,184], [259,778,143,16]],
+['over', 'Overspent', 'Over budget', '2.0 s', [455,575,197,225], [482,778,139,16]],
+['sleep', 'Sleeping', 'Late night / long idle', '4.0 s', [669,595,213,205], [689,778,174,16]],
+['content', 'Content', 'Idle, all good', '2.8 s', [912,594,157,206], [918,778,145,17]],
+['refill', 'Monday Refill', 'Weekly reset', '2.4 s', [1097,573,229,227], [1131,778,153,16]]
+];
+const PARTS = {"happy":[["pawL",0,78,190,26,34,53.8,5.9],["pawR",0,116,188,28,36,50.0,5.6],["eye0",0,71,134,22,28,50.0,50.0],["eye1",0,129,134,22,28,50.0,50.0]],"stuffed":[["pat",0,326,160,37,39,54.1,100.0],["fx0",1,400,102,26,29,50,50],["fx1",1,407,120,31,27,50,50]],"waving":[["arm",0,606,146,35,45,14.3,93.3],["eye0",0,515,130,22,28,50.0,50.0],["eye1",0,572,130,20,29,50.0,50.0],["fx0",1,636,141,27,42,50,50]],"thinking":[["chin",0,948,174,35,34,40.0,97.1],["eye0",0,946,125,22,28,50.0,50.0],["eye1",0,999,133,22,26,50.0,50.0],["fx0",1,1033,39,42,59,50,50]],"counting":[["calc",0,115,437,58,54,48.3,98.1],["tap",0,86,449,30,35,46.7,94.3],["eye0",0,82,399,25,28,50.0,50.0],["eye1",0,134,401,25,27,50.0,50.0]],"logging":[["pencil",0,266,426,38,45,63.2,97.8]],"saving":[["coin",0,477,409,41,42,48.8,50.0],["fx0",1,444,405,27,20,50,50],["fx1",1,457,384,23,28,50,50]],"chart":[["b1",0,793,446,18,27,50.0,96.3],["b2",0,811,436,18,37,50.0,97.3],["b3",0,829,426,20,47,50.0,97.9],["eye0",0,784,385,20,26,50.0,50.0],["eye1",0,729,394,21,26,50.0,50.0]],"locked":[["shackle",0,997,413,54,35,50.0,97.1]],"goal":[["flag",0,1271,321,50,40,2.0,50.0],["arm",0,1136,377,33,36,72.7,94.4],["eye0",0,1175,364,19,22,50.0,50.0],["fx0",1,1111,349,33,22,50,50],["fx1",1,1130,324,26,31,50,50]],"low":[["pawL",0,62,720,26,34,50.0,5.9],["pawR",0,110,720,26,32,50.0,6.2],["eye0",0,81,663,21,28,50.0,50.0],["eye1",0,136,663,20,28,50.0,50.0],["fx0",1,168,610,30,37,50,50]],"broke":[["pack",0,345,699,74,84,50.0,98.8],["fx0",1,395,687,15,23,50,50],["fx1",1,406,698,19,21,50,50],["fx2",1,407,773,18,22,50,50],["fx3",1,415,760,21,19,50,50]],"over":[["fistL",0,508,728,34,29,50.0,96.6],["fistR",0,553,723,39,34,48.7,97.1],["fx0",1,457,653,26,22,50,50],["fx1",1,497,578,70,68,50,50],["fx2",1,613,642,25,25,50,50],["fx3",1,622,662,28,20,50,50]],"sleep":[["blanket",0,760,686,120,98,63.3,99.0],["fx0",1,790,597,66,58,50,50]],"content":[["paws",0,963,718,51,29,49.0,48.3],["fx0",1,971,597,44,38,50,50]],"refill":[["fistL",0,1156,690,38,34,50.0,97.1],["fistR",0,1243,686,34,32,50.0,96.9],["fx0",1,1100,640,24,27,50,50],["fx1",1,1104,687,25,29,50,50],["fx2",1,1113,738,26,26,50,50],["fx3",1,1117,602,29,30,50,50],["fx4",1,1176,576,27,32,50,50],["fx5",1,1245,581,24,28,50,50],["fx6",1,1269,734,27,23,50,50],["fx7",1,1273,597,30,30,50,50],["fx8",1,1284,704,24,27,50,50],["fx9",1,1296,634,27,25,50,50],["fx10",1,1297,669,25,25,50,50]],"surprised":[["eye0",0,733,134,22,29,50.0,50.0],["eye1",0,791,134,22,28,50.0,50.0],["fx0",1,738,55,26,30,50,50],["fx1",1,768,47,20,36,50,50],["fx2",1,790,55,26,29,50,50]],"confused":[["eye0",0,1173,125,23,27,50.0,50.0],["eye1",0,1222,143,23,26,50.0,50.0],["fx0",1,1236,47,39,56,50,50]]};
+const f = (v) => Number(v.toFixed(2));
+const geo = (key, c, sh, k) => {
+const lay = (r) => r ? 'left: ' + f((r[0] - c[0]) * k) + 'px; top: ' + f((r[1] - c[1]) * k) + 'px; width: ' + f(r[2] * k) + 'px; height: ' + f(r[3] * k) + 'px' : '';
+const img = (r) => r ? 'width: ' + f(SW * k) + 'px; height: ' + f(SH * k) + 'px; left: ' + f(-r[0] * k) + 'px; top: ' + f(-r[1] * k) + 'px' : '';
+let fxi = 0;
+const parts = (PARTS[key] || []).map((p) => {
+const r = [p[2], p[3], p[4], p[5]];
+const isFx = p[1] === 1;
+const delay = isFx ? ' animation-delay: calc(' + f(-0.22 * fxi++) + 's * var(--k, 1));' : '';
+return { name: p[0], isFx: isFx, isPart: !isFx, box: lay(r) + '; transform-origin: ' + p[6] + '% ' + p[7] + '%;' + delay, img: img(r) };
+});
+return { box: 'width: ' + f(c[2] * k) + 'px; height: ' + f(c[3] * k) + 'px', main: lay(c), mainImg: img(c), sh: lay(sh), shImg: img(sh), parts: parts };
+};
+const poses = rows.map((r, i) => {
+const c = r[4], sh = r[5] ? [r[5][0] - 2, r[5][1] - 2, r[5][2] + 4, r[5][3] + 4] : null;
+const mk = 44 / Math.max(c[2], c[3]);
+return { key: r[0], name: r[1], when: r[2], dur: r[3], n: String(i + 1).padStart(2, '0'), hasSh: !!sh, b: geo(r[0], c, sh, 1), m: geo(r[0], c, sh, mk) };
+});
+return { k: (1 / speed).toFixed(3), bg: this.props.backdrop ?? 'checker', poses };
+}
+}
+</script>
+</body>
+</html>

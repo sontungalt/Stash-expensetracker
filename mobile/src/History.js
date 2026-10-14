@@ -1,16 +1,17 @@
 import { useMemo, useState } from 'react'
-import { Animated, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native'
-import { FadeIn } from './hooks'
+import { Animated, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native'
+import { FadeIn, PopPressable } from './hooks'
 import { Glass } from './Glass'
 import LiquidToggle from './LiquidToggle'
 import OriginDropdown from './OriginDropdown'
 import { usePullToRefresh } from './PullToRefresh'
-import { CATEGORIES, dayLabel, fromISO, money, todayISO } from './lib'
+import { CATEGORIES, dayLabel, fromISO, isIncome, money, summarize, todayISO } from './lib'
 import { alpha, ICONS, rounded, useTheme } from './theme'
 
+const INCOME = 'Income'
 const SORTS = [
   { key: 'date', label: 'Newest first', hint: 'Most recent on top', icon: '🕐' }, { key: 'dateAsc', label: 'Oldest first', hint: 'Where it all started', icon: '📅' },
-  { key: 'amount', label: 'Highest amount', hint: 'Biggest spends first', icon: '📈' }, { key: 'amountAsc', label: 'Lowest amount', hint: 'Smallest spends first', icon: '📉' },
+  { key: 'amount', label: 'Highest amount', hint: 'Biggest amounts first', icon: '📈' }, { key: 'amountAsc', label: 'Lowest amount', hint: 'Smallest amounts first', icon: '📉' },
 ]
 const WD = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 const CHUNK = 25
@@ -26,9 +27,10 @@ const heading = (date) => {
 
 function Row({ r, last, onEdit }) {
   const t = useTheme()
+  const income = isIncome(r)
   return (
-    <Pressable onPress={() => onEdit(r)} accessibilityRole="button"
-      accessibilityLabel={`${r.description}, ${money(r.amount)}, ${r.category}, ${dayLabel(r.date)}. Tap to edit.`}
+    <PopPressable onPress={() => onEdit(r)} accessibilityRole="button"
+      accessibilityLabel={`${income ? 'Income: ' : ''}${r.description}, ${money(r.amount)}, ${r.category}, ${dayLabel(r.date)}. Tap to edit.`}
       style={({ pressed }) => [styles.row, { backgroundColor: pressed ? t.line : 'transparent' }]}>
       <View style={[styles.icon, { backgroundColor: alpha(t.cat(r.category), 0.16) }]}><Text style={{ fontSize: 20 }}>{ICONS[r.category]}</Text></View>
       <View style={[styles.rowBody, !last && { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: t.line }]}>
@@ -36,9 +38,9 @@ function Row({ r, last, onEdit }) {
           <Text style={{ color: t.text, fontSize: 16, fontWeight: '600' }} numberOfLines={1}>{r.description}</Text>
           <Text style={{ color: t.text2, fontSize: 13, marginTop: 2 }}>{r.category}</Text>
         </View>
-        <Text style={{ color: t.text, fontSize: 16, fontWeight: '700', fontVariant: ['tabular-nums'], fontFamily: rounded }}>{money(r.amount)}</Text>
+        <Text style={{ color: income ? t.good : t.text, fontSize: 16, fontWeight: '700', fontVariant: ['tabular-nums'], fontFamily: rounded }}>{income ? '+' : ''}{money(r.amount)}</Text>
       </View>
-    </Pressable>
+    </PopPressable>
   )
 }
 
@@ -69,7 +71,7 @@ export default function History({ rows, periodLabel, onEdit, onRefresh }) {
 
   const { groups, count, sum } = useMemo(() => {
     const n = q.trim().toLowerCase()
-    const f = rows.filter((r) => (cat === 'All' || r.category === cat) && (!n || r.description.toLowerCase().includes(n)))
+    const f = rows.filter((r) => (cat === 'All' || (cat === INCOME ? isIncome(r) : !isIncome(r) && r.category === cat)) && (!n || r.description.toLowerCase().includes(n)))
     const dir = sort.endsWith('Asc') ? 1 : -1
     const by = sort.startsWith('amount') ? (a, b) => a.amount - b.amount : (a, b) => a.date.localeCompare(b.date)
     f.sort((a, b) => by(a, b) * dir)
@@ -77,12 +79,13 @@ export default function History({ rows, periodLabel, onEdit, onRefresh }) {
     if (sort.startsWith('date') && byDay) {
       const days = new Map()
       f.forEach((r) => { if (!days.has(r.date)) days.set(r.date, []); days.get(r.date).push(r) })
-      days.forEach((list, date) => out.push({ id: date, title: heading(date), total: list.reduce((s, r) => s + r.amount, 0), rows: list }))
+      days.forEach((list, date) => out.push({ id: date, title: heading(date), total: summarize(list).spent || null, rows: list }))
     } else {
-      for (let i = 0; i < f.length; i += CHUNK) out.push({ id: `c${i}`, title: i === 0 ? (sort.startsWith('date') ? 'All expenses' : SORTS.find((s) => s.key === sort).label) : '', rows: f.slice(i, i + CHUNK) })
+      for (let i = 0; i < f.length; i += CHUNK) out.push({ id: `c${i}`, title: i === 0 ? (sort.startsWith('date') ? 'All activity' : SORTS.find((s) => s.key === sort).label) : '', rows: f.slice(i, i + CHUNK) })
     }
-    return { groups: out, count: f.length, sum: f.reduce((s, r) => s + r.amount, 0) }
+    return { groups: out, count: f.length, sum: cat === INCOME ? summarize(f).income : summarize(f).spent }
   }, [rows, q, cat, sort, byDay])
+  const { income, spent, net } = useMemo(() => summarize(rows), [rows])
 
   return (
     <View style={{ flex: 1 }}>
@@ -114,16 +117,27 @@ export default function History({ rows, periodLabel, onEdit, onRefresh }) {
           </View>
 
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chips}>
-            {['All', ...CATEGORIES].map((c) => {
+            {['All', ...CATEGORIES, INCOME].map((c) => {
               const on = cat === c
               return (
-                <Pressable key={c} onPress={() => setCat(on && c !== 'All' ? 'All' : c)} accessibilityRole="button" accessibilityState={{ selected: on }}
+                <PopPressable key={c} onPress={() => setCat(on && c !== 'All' ? 'All' : c)} accessibilityRole="button" accessibilityState={{ selected: on }}
                   style={[styles.chip, { backgroundColor: on ? t.accent : t.chip, borderColor: on ? t.accent : t.glassEdge }]}>
-                  <Text style={{ color: on ? t.onAccent : t.text, fontSize: 13.5, fontWeight: on ? '700' : '500' }}>{c === 'All' ? 'All' : `${ICONS[c]} ${c}`}</Text>
-                </Pressable>
+                  <Text style={{ color: on ? t.onAccent : t.text, fontSize: 13.5, fontWeight: on ? '700' : '500' }}>{c === 'All' ? 'All' : c === INCOME ? '💵 Income' : `${ICONS[c]} ${c}`}</Text>
+                </PopPressable>
               )
             })}
           </ScrollView>
+
+          {income > 0 && (
+            <Glass radius={20} style={styles.balance}>
+              {[['In', money(income), t.good], ['Out', money(spent), t.text], [net < 0 ? 'Over by' : 'Left', money(Math.abs(net)), net < 0 ? t.danger : t.good]].map(([label, value, color]) => (
+                <View key={label} style={{ flex: 1, alignItems: 'center' }} accessible accessibilityLabel={`${label} ${value}`}>
+                  <Text style={{ color: t.text2, fontSize: 12, fontWeight: '600' }}>{label}</Text>
+                  <Text style={{ color, fontSize: 17, fontWeight: '800', fontFamily: rounded, fontVariant: ['tabular-nums'], marginTop: 2 }}>{value}</Text>
+                </View>
+              ))}
+            </Glass>
+          )}
 
           <View style={styles.summaryRow}>
             <Text style={{ flex: 1, fontSize: 14 }} numberOfLines={1}>
@@ -139,7 +153,7 @@ export default function History({ rows, periodLabel, onEdit, onRefresh }) {
           </View>
         </View>
       }
-      ListEmptyComponent={<View style={{ alignItems: 'center', padding: 56 }}><Text style={{ fontSize: 40 }}>🔍</Text><Text style={{ color: t.text2, marginTop: 10, fontSize: 15 }}>No expenses match.</Text></View>}
+      ListEmptyComponent={<View style={{ alignItems: 'center', padding: 56 }}><Text style={{ fontSize: 40 }}>🔍</Text><Text style={{ color: t.text2, marginTop: 10, fontSize: 15 }}>Nothing matches.</Text></View>}
       renderItem={({ item, index }) => <Group g={item} index={index} onEdit={onEdit} />}
     />
     </View>
@@ -153,6 +167,7 @@ const styles = StyleSheet.create({
   sortBtn: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   chips: { gap: 8, paddingHorizontal: 20, paddingTop: 14, paddingBottom: 4 },
   chip: { paddingHorizontal: 13, paddingVertical: 7, borderRadius: 99, borderWidth: 1 },
+  balance: { flexDirection: 'row', marginHorizontal: 20, marginTop: 16, paddingVertical: 14 },
   summaryRow: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingHorizontal: 22, paddingTop: 16 },
   group: { marginHorizontal: 20, marginTop: 18 },
   dayHead: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'baseline', paddingHorizontal: 4, paddingBottom: 9 },

@@ -1,14 +1,14 @@
 import { LinearGradient } from 'expo-linear-gradient'
 import { useMemo } from 'react'
-import { Animated, Pressable, StyleSheet, Text, View } from 'react-native'
+import { Animated, StyleSheet, Text, View } from 'react-native'
 import { Donut, MonthBars } from './charts'
-import { FadeIn, useTween } from './hooks'
+import { FadeIn, PopPressable, useTween } from './hooks'
 import { Glass } from './Glass'
 import { usePullToRefresh } from './PullToRefresh'
-import { categoryTotals, money, monthKey, monthLabel, monthlyTotals, shiftMonth, todayISO } from './lib'
+import { categoryTotals, money, monthKey, monthLabel, monthlyTotals, shiftMonth, summarize, todayISO } from './lib'
 import { ICONS, rounded, useTheme } from './theme'
 
-function Hero({ total, delta, period, count, topCat, avgLabel, avg }) {
+function Hero({ total, income, net, delta, period, count, topCat, avgLabel, avg }) {
   const t = useTheme()
   const shown = useTween(total, 900)
   return (
@@ -24,6 +24,12 @@ function Hero({ total, delta, period, count, topCat, avgLabel, avg }) {
           </View>
         )}
         <View style={styles.pill}><Text style={styles.pillTxt}>{count} transaction{count === 1 ? '' : 's'}</Text></View>
+        {income > 0 && <View style={[styles.pill, { backgroundColor: 'rgba(80,220,130,0.26)' }]}><Text style={styles.pillTxt}>In {money(income)}</Text></View>}
+        {income > 0 && (
+          <View style={[styles.pill, { backgroundColor: net < 0 ? 'rgba(255,120,110,0.28)' : 'rgba(80,220,130,0.26)' }]}>
+            <Text style={styles.pillTxt}>{net < 0 ? `Over by ${money(-net)}` : `${money(net)} left`}</Text>
+          </View>
+        )}
       </View>
       <View style={styles.heroStats}>
         <View style={{ flex: 1 }}>
@@ -48,12 +54,12 @@ export default function Overview({ expenses, selected, onSelect, onLoadSample, o
   const scoped = useMemo(() => (selected === 'all' ? expenses : expenses.filter((e) => monthKey(e.date) === selected)), [expenses, selected])
   const cats = useMemo(() => categoryTotals(scoped), [scoped])
 
-  const total = scoped.reduce((s, e) => s + e.amount, 0)
-  const prev = selected === 'all' ? null : expenses.filter((e) => monthKey(e.date) === shiftMonth(selected, -1)).reduce((s, e) => s + e.amount, 0)
+  const { income, spent: total, net } = summarize(scoped)
+  const prev = selected === 'all' ? null : summarize(expenses.filter((e) => monthKey(e.date) === shiftMonth(selected, -1))).spent
   const delta = prev ? ((total - prev) / prev) * 100 : null
   const period = selected === 'all' ? 'All time' : monthLabel(selected, true)
   const months = new Set(expenses.map((e) => monthKey(e.date))).size || 1
-  let avgLabel = 'Avg per month', avg = expenses.reduce((s, e) => s + e.amount, 0) / months
+  let avgLabel = 'Avg per month', avg = summarize(expenses).spent / months
   if (selected !== 'all') {
     const [y, m] = selected.split('-').map(Number)
     const now = new Date()
@@ -69,8 +75,8 @@ export default function Overview({ expenses, selected, onSelect, onLoadSample, o
           <View style={[styles.emptyIcon, { backgroundColor: t.accentSoft }]}><Text style={{ fontSize: 44 }}>💸</Text></View>
           <Text style={[styles.emptyTitle, { color: t.text }]}>Track your first expense</Text>
           <Text style={{ color: t.text2, textAlign: 'center', fontSize: 15, lineHeight: 21, marginBottom: 24 }}>See where your money goes with monthly and category breakdowns.</Text>
-          <Pressable onPress={onAdd} style={[styles.btn, { backgroundColor: t.accent }]} accessibilityRole="button"><Text style={{ color: t.onAccent, fontWeight: '700', fontSize: 17 }}>Add Expense</Text></Pressable>
-          <Pressable onPress={onLoadSample} style={{ padding: 16 }} accessibilityRole="button"><Text style={{ color: t.accent, fontSize: 16, fontWeight: '600' }}>or try with sample data</Text></Pressable>
+          <PopPressable onPress={onAdd} style={[styles.btn, { backgroundColor: t.accent }]} accessibilityRole="button"><Text style={{ color: t.onAccent, fontWeight: '700', fontSize: 17 }}>Add Expense</Text></PopPressable>
+          <PopPressable onPress={onLoadSample} style={{ padding: 16 }} accessibilityRole="button"><Text style={{ color: t.accent, fontSize: 16, fontWeight: '600' }}>or try with sample data</Text></PopPressable>
         </FadeIn>
       </View>
     )
@@ -80,7 +86,7 @@ export default function Overview({ expenses, selected, onSelect, onLoadSample, o
     {pull.indicator}
     <Animated.ScrollView {...pull.scrollProps} contentContainerStyle={{ paddingHorizontal: 20, paddingTop: 6, gap: 20, paddingBottom: 150 }} showsVerticalScrollIndicator={false}>
       <FadeIn>
-        <Hero total={total} delta={delta} period={period} count={scoped.length} topCat={cats[0]} avgLabel={avgLabel} avg={avg} />
+        <Hero total={total} income={income} net={net} delta={delta} period={period} count={scoped.length} topCat={cats[0]} avgLabel={avgLabel} avg={avg} />
       </FadeIn>
 
       <FadeIn delay={90}>

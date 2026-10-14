@@ -1,0 +1,7001 @@
+{
+  "atlases": {
+    "body": "e8b35306c9f0310f14a9cbfbb6a22773",
+    "parts": "bbb03860f5392c103323ee7a3c040045",
+    "effects": "688192c2e6e5653d31a2352393c1e0b9",
+    "shadow": "fa28d32e56a095e8e8b56e017e175b19"
+  },
+  "poses": [
+    {
+      "key": "happy",
+      "name": "Happy",
+      "duration": 2.4,
+      "crop": [
+        32,
+        82,
+        169,
+        185
+      ],
+      "shadow": [
+        45,
+        243,
+        139,
+        20
+      ],
+      "bodyMotion": {
+        "animation": "bounce2",
+        "duration": 2.4,
+        "delay": 0,
+        "linear": false
+      },
+      "shadowMotion": {
+        "animation": "shBounce",
+        "duration": 2.4,
+        "delay": 0,
+        "linear": false
+      },
+      "parts": [
+        {
+          "name": "pawL",
+          "atlas": "parts",
+          "crop": [
+            78,
+            190,
+            26,
+            34
+          ],
+          "anchor": [
+            0.5379999999999999,
+            0.059000000000000004
+          ],
+          "motion": {
+            "animation": "flapL",
+            "duration": 2.4,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "pawR",
+          "atlas": "parts",
+          "crop": [
+            116,
+            188,
+            28,
+            36
+          ],
+          "anchor": [
+            0.5,
+            0.055999999999999994
+          ],
+          "motion": {
+            "animation": "flapR",
+            "duration": 2.4,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "eye0",
+          "atlas": "parts",
+          "crop": [
+            71,
+            134,
+            22,
+            28
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "blink",
+            "duration": 2.4,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "eye1",
+          "atlas": "parts",
+          "crop": [
+            129,
+            134,
+            22,
+            28
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "blink",
+            "duration": 2.4,
+            "delay": 0,
+            "linear": false
+          }
+        }
+      ]
+    },
+    {
+      "key": "stuffed",
+      "name": "Stuffed",
+      "duration": 2.8,
+      "crop": [
+        226,
+        75,
+        215,
+        192
+      ],
+      "shadow": [
+        258,
+        243,
+        144,
+        20
+      ],
+      "bodyMotion": {
+        "animation": "puff",
+        "duration": 2.8,
+        "delay": 0,
+        "linear": false
+      },
+      "shadowMotion": {
+        "animation": null,
+        "duration": 2.8,
+        "delay": 0,
+        "linear": false
+      },
+      "parts": [
+        {
+          "name": "pat",
+          "atlas": "parts",
+          "crop": [
+            326,
+            160,
+            37,
+            39
+          ],
+          "anchor": [
+            0.541,
+            1.0
+          ],
+          "motion": {
+            "animation": "pat",
+            "duration": 2.8,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "fx0",
+          "atlas": "effects",
+          "crop": [
+            400,
+            102,
+            26,
+            29
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "twinkle",
+            "duration": 2.8,
+            "delay": -0.0,
+            "linear": false
+          }
+        },
+        {
+          "name": "fx1",
+          "atlas": "effects",
+          "crop": [
+            407,
+            120,
+            31,
+            27
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "twinkle",
+            "duration": 2.8,
+            "delay": -0.22,
+            "linear": false
+          }
+        }
+      ]
+    },
+    {
+      "key": "waving",
+      "name": "Waving",
+      "duration": 2.0,
+      "crop": [
+        462,
+        78,
+        204,
+        190
+      ],
+      "shadow": [
+        475,
+        244,
+        145,
+        20
+      ],
+      "bodyMotion": {
+        "animation": "leanHi",
+        "duration": 2.0,
+        "delay": 0,
+        "linear": false
+      },
+      "shadowMotion": {
+        "animation": null,
+        "duration": 2.0,
+        "delay": 0,
+        "linear": false
+      },
+      "parts": [
+        {
+          "name": "arm",
+          "atlas": "parts",
+          "crop": [
+            606,
+            146,
+            35,
+            45
+          ],
+          "anchor": [
+            0.14300000000000002,
+            0.9329999999999999
+          ],
+          "motion": {
+            "animation": "wave",
+            "duration": 2.0,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "eye0",
+          "atlas": "parts",
+          "crop": [
+            515,
+            130,
+            22,
+            28
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "blink",
+            "duration": 2.0,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "eye1",
+          "atlas": "parts",
+          "crop": [
+            572,
+            130,
+            20,
+            29
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "blink",
+            "duration": 2.0,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "fx0",
+          "atlas": "effects",
+          "crop": [
+            636,
+            141,
+            27,
+            42
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "waveLines",
+            "duration": 2.0,
+            "delay": -0.0,
+            "linear": false
+          }
+        }
+      ]
+    },
+    {
+      "key": "surprised",
+      "name": "Surprised",
+      "duration": 2.6,
+      "crop": [
+        690,
+        45,
+        168,
+        223
+      ],
+      "shadow": [
+        698,
+        244,
+        150,
+        20
+      ],
+      "bodyMotion": {
+        "animation": "startle",
+        "duration": 2.6,
+        "delay": 0,
+        "linear": false
+      },
+      "shadowMotion": {
+        "animation": "shStartle",
+        "duration": 2.6,
+        "delay": 0,
+        "linear": false
+      },
+      "parts": [
+        {
+          "name": "eye0",
+          "atlas": "parts",
+          "crop": [
+            733,
+            134,
+            22,
+            29
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "blink2",
+            "duration": 2.6,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "eye1",
+          "atlas": "parts",
+          "crop": [
+            791,
+            134,
+            22,
+            28
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "blink2",
+            "duration": 2.6,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "fx0",
+          "atlas": "effects",
+          "crop": [
+            738,
+            55,
+            26,
+            30
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "shock",
+            "duration": 2.6,
+            "delay": -0.0,
+            "linear": false
+          }
+        },
+        {
+          "name": "fx1",
+          "atlas": "effects",
+          "crop": [
+            768,
+            47,
+            20,
+            36
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "shock",
+            "duration": 2.6,
+            "delay": -0.22,
+            "linear": false
+          }
+        },
+        {
+          "name": "fx2",
+          "atlas": "effects",
+          "crop": [
+            790,
+            55,
+            26,
+            29
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "shock",
+            "duration": 2.6,
+            "delay": -0.44,
+            "linear": false
+          }
+        }
+      ]
+    },
+    {
+      "key": "thinking",
+      "name": "Thinking",
+      "duration": 3.6,
+      "crop": [
+        907,
+        37,
+        175,
+        231
+      ],
+      "shadow": [
+        917,
+        244,
+        147,
+        20
+      ],
+      "bodyMotion": {
+        "animation": "ponder",
+        "duration": 3.6,
+        "delay": 0,
+        "linear": false
+      },
+      "shadowMotion": {
+        "animation": null,
+        "duration": 3.6,
+        "delay": 0,
+        "linear": false
+      },
+      "parts": [
+        {
+          "name": "chin",
+          "atlas": "parts",
+          "crop": [
+            948,
+            174,
+            35,
+            34
+          ],
+          "anchor": [
+            0.4,
+            0.971
+          ],
+          "motion": {
+            "animation": "tapChin",
+            "duration": 3.6,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "eye0",
+          "atlas": "parts",
+          "crop": [
+            946,
+            125,
+            22,
+            28
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "lookUp",
+            "duration": 3.6,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "eye1",
+          "atlas": "parts",
+          "crop": [
+            999,
+            133,
+            22,
+            26
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "lookUp",
+            "duration": 3.6,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "fx0",
+          "atlas": "effects",
+          "crop": [
+            1033,
+            39,
+            42,
+            59
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "qBob",
+            "duration": 3.6,
+            "delay": -0.0,
+            "linear": false
+          }
+        }
+      ]
+    },
+    {
+      "key": "confused",
+      "name": "Confused",
+      "duration": 3.2,
+      "crop": [
+        1129,
+        45,
+        171,
+        223
+      ],
+      "shadow": [
+        1138,
+        244,
+        146,
+        20
+      ],
+      "bodyMotion": {
+        "animation": "tilt",
+        "duration": 3.2,
+        "delay": 0,
+        "linear": false
+      },
+      "shadowMotion": {
+        "animation": null,
+        "duration": 3.2,
+        "delay": 0,
+        "linear": false
+      },
+      "parts": [
+        {
+          "name": "eye0",
+          "atlas": "parts",
+          "crop": [
+            1173,
+            125,
+            23,
+            27
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "blinkFast",
+            "duration": 3.2,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "eye1",
+          "atlas": "parts",
+          "crop": [
+            1222,
+            143,
+            23,
+            26
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "blinkFast",
+            "duration": 3.2,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "fx0",
+          "atlas": "effects",
+          "crop": [
+            1236,
+            47,
+            39,
+            56
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "qPop",
+            "duration": 3.2,
+            "delay": -0.0,
+            "linear": false
+          }
+        }
+      ]
+    },
+    {
+      "key": "counting",
+      "name": "Counting",
+      "duration": 2.2,
+      "crop": [
+        25,
+        344,
+        169,
+        186
+      ],
+      "shadow": [
+        40,
+        506,
+        145,
+        20
+      ],
+      "bodyMotion": {
+        "animation": null,
+        "duration": 2.2,
+        "delay": 0,
+        "linear": false
+      },
+      "shadowMotion": {
+        "animation": null,
+        "duration": 2.2,
+        "delay": 0,
+        "linear": false
+      },
+      "parts": [
+        {
+          "name": "calc",
+          "atlas": "parts",
+          "crop": [
+            115,
+            437,
+            58,
+            54
+          ],
+          "anchor": [
+            0.483,
+            0.981
+          ],
+          "motion": {
+            "animation": "calcBob",
+            "duration": 2.2,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "tap",
+          "atlas": "parts",
+          "crop": [
+            86,
+            449,
+            30,
+            35
+          ],
+          "anchor": [
+            0.467,
+            0.943
+          ],
+          "motion": {
+            "animation": "tapCalc",
+            "duration": 2.2,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "eye0",
+          "atlas": "parts",
+          "crop": [
+            82,
+            399,
+            25,
+            28
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "checkCalc",
+            "duration": 2.2,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "eye1",
+          "atlas": "parts",
+          "crop": [
+            134,
+            401,
+            25,
+            27
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "checkCalc",
+            "duration": 2.2,
+            "delay": 0,
+            "linear": false
+          }
+        }
+      ]
+    },
+    {
+      "key": "logging",
+      "name": "Logging",
+      "duration": 2.4,
+      "crop": [
+        248,
+        339,
+        171,
+        189
+      ],
+      "shadow": [
+        256,
+        504,
+        147,
+        20
+      ],
+      "bodyMotion": {
+        "animation": "headBob",
+        "duration": 2.4,
+        "delay": 0,
+        "linear": false
+      },
+      "shadowMotion": {
+        "animation": null,
+        "duration": 2.4,
+        "delay": 0,
+        "linear": false
+      },
+      "parts": [
+        {
+          "name": "pencil",
+          "atlas": "parts",
+          "crop": [
+            266,
+            426,
+            38,
+            45
+          ],
+          "anchor": [
+            0.632,
+            0.978
+          ],
+          "motion": {
+            "animation": "write",
+            "duration": 2.4,
+            "delay": 0,
+            "linear": false
+          }
+        }
+      ]
+    },
+    {
+      "key": "saving",
+      "name": "Saving",
+      "duration": 2.8,
+      "crop": [
+        441,
+        336,
+        200,
+        194
+      ],
+      "shadow": [
+        474,
+        506,
+        148,
+        20
+      ],
+      "bodyMotion": {
+        "animation": "hugNod",
+        "duration": 2.8,
+        "delay": 0,
+        "linear": false
+      },
+      "shadowMotion": {
+        "animation": null,
+        "duration": 2.8,
+        "delay": 0,
+        "linear": false
+      },
+      "parts": [
+        {
+          "name": "coin",
+          "atlas": "parts",
+          "crop": [
+            477,
+            409,
+            41,
+            42
+          ],
+          "anchor": [
+            0.488,
+            0.5
+          ],
+          "motion": {
+            "animation": "coinDrop",
+            "duration": 2.8,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "fx0",
+          "atlas": "effects",
+          "crop": [
+            444,
+            405,
+            27,
+            20
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "saveSpark",
+            "duration": 2.8,
+            "delay": -0.0,
+            "linear": false
+          }
+        },
+        {
+          "name": "fx1",
+          "atlas": "effects",
+          "crop": [
+            457,
+            384,
+            23,
+            28
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "saveSpark",
+            "duration": 2.8,
+            "delay": -0.22,
+            "linear": false
+          }
+        }
+      ]
+    },
+    {
+      "key": "chart",
+      "name": "Chart Check",
+      "duration": 3.2,
+      "crop": [
+        686,
+        334,
+        187,
+        195
+      ],
+      "shadow": [
+        694,
+        505,
+        154,
+        21
+      ],
+      "bodyMotion": {
+        "animation": "proud",
+        "duration": 3.2,
+        "delay": 0,
+        "linear": false
+      },
+      "shadowMotion": {
+        "animation": null,
+        "duration": 3.2,
+        "delay": 0,
+        "linear": false
+      },
+      "parts": [
+        {
+          "name": "b1",
+          "atlas": "parts",
+          "crop": [
+            793,
+            446,
+            18,
+            27
+          ],
+          "anchor": [
+            0.5,
+            0.963
+          ],
+          "motion": {
+            "animation": "grow1",
+            "duration": 3.2,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "b2",
+          "atlas": "parts",
+          "crop": [
+            811,
+            436,
+            18,
+            37
+          ],
+          "anchor": [
+            0.5,
+            0.973
+          ],
+          "motion": {
+            "animation": "grow2",
+            "duration": 3.2,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "b3",
+          "atlas": "parts",
+          "crop": [
+            829,
+            426,
+            20,
+            47
+          ],
+          "anchor": [
+            0.5,
+            0.9790000000000001
+          ],
+          "motion": {
+            "animation": "grow3",
+            "duration": 3.2,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "eye0",
+          "atlas": "parts",
+          "crop": [
+            784,
+            385,
+            20,
+            26
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "blink",
+            "duration": 3.2,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "eye1",
+          "atlas": "parts",
+          "crop": [
+            729,
+            394,
+            21,
+            26
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "blink",
+            "duration": 3.2,
+            "delay": 0,
+            "linear": false
+          }
+        }
+      ]
+    },
+    {
+      "key": "locked",
+      "name": "Locked",
+      "duration": 2.6,
+      "crop": [
+        898,
+        338,
+        178,
+        192
+      ],
+      "shadow": [
+        914,
+        506,
+        151,
+        20
+      ],
+      "bodyMotion": {
+        "animation": "clickSquash",
+        "duration": 2.6,
+        "delay": 0,
+        "linear": false
+      },
+      "shadowMotion": {
+        "animation": null,
+        "duration": 2.6,
+        "delay": 0,
+        "linear": false
+      },
+      "parts": [
+        {
+          "name": "shackle",
+          "atlas": "parts",
+          "crop": [
+            997,
+            413,
+            54,
+            35
+          ],
+          "anchor": [
+            0.5,
+            0.971
+          ],
+          "motion": {
+            "animation": "clickShut",
+            "duration": 2.6,
+            "delay": 0,
+            "linear": false
+          }
+        }
+      ]
+    },
+    {
+      "key": "goal",
+      "name": "Goal Reached",
+      "duration": 2.2,
+      "crop": [
+        1100,
+        316,
+        223,
+        210
+      ],
+      "shadow": null,
+      "bodyMotion": {
+        "animation": "stand",
+        "duration": 2.2,
+        "delay": 0,
+        "linear": false
+      },
+      "shadowMotion": {
+        "animation": null,
+        "duration": 2.2,
+        "delay": 0,
+        "linear": false
+      },
+      "parts": [
+        {
+          "name": "flag",
+          "atlas": "parts",
+          "crop": [
+            1271,
+            321,
+            50,
+            40
+          ],
+          "anchor": [
+            0.02,
+            0.5
+          ],
+          "motion": {
+            "animation": "flagWave",
+            "duration": 2.2,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "arm",
+          "atlas": "parts",
+          "crop": [
+            1136,
+            377,
+            33,
+            36
+          ],
+          "anchor": [
+            0.727,
+            0.9440000000000001
+          ],
+          "motion": {
+            "animation": "cheer",
+            "duration": 2.2,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "eye0",
+          "atlas": "parts",
+          "crop": [
+            1175,
+            364,
+            19,
+            22
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "blink",
+            "duration": 2.2,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "fx0",
+          "atlas": "effects",
+          "crop": [
+            1111,
+            349,
+            33,
+            22
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "twinkle",
+            "duration": 2.2,
+            "delay": -0.0,
+            "linear": false
+          }
+        },
+        {
+          "name": "fx1",
+          "atlas": "effects",
+          "crop": [
+            1130,
+            324,
+            26,
+            31
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "twinkle",
+            "duration": 2.2,
+            "delay": -0.22,
+            "linear": false
+          }
+        }
+      ]
+    },
+    {
+      "key": "low",
+      "name": "Running Low",
+      "duration": 3.0,
+      "crop": [
+        32,
+        608,
+        168,
+        192
+      ],
+      "shadow": [
+        36,
+        776,
+        154,
+        20
+      ],
+      "bodyMotion": {
+        "animation": "sway",
+        "duration": 3.0,
+        "delay": 0,
+        "linear": false
+      },
+      "shadowMotion": {
+        "animation": null,
+        "duration": 3.0,
+        "delay": 0,
+        "linear": false
+      },
+      "parts": [
+        {
+          "name": "pawL",
+          "atlas": "parts",
+          "crop": [
+            62,
+            720,
+            26,
+            34
+          ],
+          "anchor": [
+            0.5,
+            0.059000000000000004
+          ],
+          "motion": {
+            "animation": "fidL",
+            "duration": 1.0,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "pawR",
+          "atlas": "parts",
+          "crop": [
+            110,
+            720,
+            26,
+            32
+          ],
+          "anchor": [
+            0.5,
+            0.062
+          ],
+          "motion": {
+            "animation": "fidR",
+            "duration": 1.0,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "eye0",
+          "atlas": "parts",
+          "crop": [
+            81,
+            663,
+            21,
+            28
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "dart",
+            "duration": 3.0,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "eye1",
+          "atlas": "parts",
+          "crop": [
+            136,
+            663,
+            20,
+            28
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "dart",
+            "duration": 3.0,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "fx0",
+          "atlas": "effects",
+          "crop": [
+            168,
+            610,
+            30,
+            37
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "drip",
+            "duration": 3.0,
+            "delay": -0.0,
+            "linear": false
+          }
+        }
+      ]
+    },
+    {
+      "key": "broke",
+      "name": "Broke",
+      "duration": 3.6,
+      "crop": [
+        242,
+        616,
+        197,
+        184
+      ],
+      "shadow": [
+        257,
+        776,
+        147,
+        20
+      ],
+      "bodyMotion": {
+        "animation": "sigh",
+        "duration": 3.6,
+        "delay": 0,
+        "linear": false
+      },
+      "shadowMotion": {
+        "animation": null,
+        "duration": 3.6,
+        "delay": 0,
+        "linear": false
+      },
+      "parts": [
+        {
+          "name": "pack",
+          "atlas": "parts",
+          "crop": [
+            345,
+            699,
+            74,
+            84
+          ],
+          "anchor": [
+            0.5,
+            0.988
+          ],
+          "motion": {
+            "animation": "shakePack",
+            "duration": 3.6,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "fx0",
+          "atlas": "effects",
+          "crop": [
+            395,
+            687,
+            15,
+            23
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "shakeLines",
+            "duration": 3.6,
+            "delay": -0.0,
+            "linear": false
+          }
+        },
+        {
+          "name": "fx1",
+          "atlas": "effects",
+          "crop": [
+            406,
+            698,
+            19,
+            21
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "shakeLines",
+            "duration": 3.6,
+            "delay": -0.22,
+            "linear": false
+          }
+        },
+        {
+          "name": "fx2",
+          "atlas": "effects",
+          "crop": [
+            407,
+            773,
+            18,
+            22
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "shakeLines",
+            "duration": 3.6,
+            "delay": -0.44,
+            "linear": false
+          }
+        },
+        {
+          "name": "fx3",
+          "atlas": "effects",
+          "crop": [
+            415,
+            760,
+            21,
+            19
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "shakeLines",
+            "duration": 3.6,
+            "delay": -0.66,
+            "linear": false
+          }
+        }
+      ]
+    },
+    {
+      "key": "over",
+      "name": "Overspent",
+      "duration": 2.0,
+      "crop": [
+        455,
+        575,
+        197,
+        225
+      ],
+      "shadow": [
+        480,
+        776,
+        143,
+        20
+      ],
+      "bodyMotion": {
+        "animation": "tremble",
+        "duration": 2.0,
+        "delay": 0,
+        "linear": false
+      },
+      "shadowMotion": {
+        "animation": null,
+        "duration": 2.0,
+        "delay": 0,
+        "linear": false
+      },
+      "parts": [
+        {
+          "name": "fistL",
+          "atlas": "parts",
+          "crop": [
+            508,
+            728,
+            34,
+            29
+          ],
+          "anchor": [
+            0.5,
+            0.966
+          ],
+          "motion": {
+            "animation": "fistShake",
+            "duration": 2.0,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "fistR",
+          "atlas": "parts",
+          "crop": [
+            553,
+            723,
+            39,
+            34
+          ],
+          "anchor": [
+            0.48700000000000004,
+            0.971
+          ],
+          "motion": {
+            "animation": "fistShake",
+            "duration": 2.0,
+            "delay": -0.25,
+            "linear": false
+          }
+        },
+        {
+          "name": "fx0",
+          "atlas": "effects",
+          "crop": [
+            457,
+            653,
+            26,
+            22
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "dropL",
+            "duration": 2.0,
+            "delay": -0.0,
+            "linear": false
+          }
+        },
+        {
+          "name": "fx1",
+          "atlas": "effects",
+          "crop": [
+            497,
+            578,
+            70,
+            68
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "fume",
+            "duration": 2.0,
+            "delay": -0.22,
+            "linear": false
+          }
+        },
+        {
+          "name": "fx2",
+          "atlas": "effects",
+          "crop": [
+            613,
+            642,
+            25,
+            25
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "dropR",
+            "duration": 2.0,
+            "delay": -0.44,
+            "linear": false
+          }
+        },
+        {
+          "name": "fx3",
+          "atlas": "effects",
+          "crop": [
+            622,
+            662,
+            28,
+            20
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "dropR",
+            "duration": 2.0,
+            "delay": -0.66,
+            "linear": false
+          }
+        }
+      ]
+    },
+    {
+      "key": "sleep",
+      "name": "Sleeping",
+      "duration": 4.0,
+      "crop": [
+        669,
+        595,
+        213,
+        205
+      ],
+      "shadow": [
+        687,
+        776,
+        178,
+        20
+      ],
+      "bodyMotion": {
+        "animation": "breathe",
+        "duration": 4.0,
+        "delay": 0,
+        "linear": false
+      },
+      "shadowMotion": {
+        "animation": null,
+        "duration": 4.0,
+        "delay": 0,
+        "linear": false
+      },
+      "parts": [
+        {
+          "name": "blanket",
+          "atlas": "parts",
+          "crop": [
+            760,
+            686,
+            120,
+            98
+          ],
+          "anchor": [
+            0.633,
+            0.99
+          ],
+          "motion": {
+            "animation": "blanketBreath",
+            "duration": 4.0,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "fx0",
+          "atlas": "effects",
+          "crop": [
+            790,
+            597,
+            66,
+            58
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "zFloat",
+            "duration": 4.0,
+            "delay": -0.0,
+            "linear": false
+          }
+        }
+      ]
+    },
+    {
+      "key": "content",
+      "name": "Content",
+      "duration": 2.8,
+      "crop": [
+        912,
+        594,
+        157,
+        206
+      ],
+      "shadow": [
+        916,
+        776,
+        149,
+        21
+      ],
+      "bodyMotion": {
+        "animation": "contentSway",
+        "duration": 2.8,
+        "delay": 0,
+        "linear": false
+      },
+      "shadowMotion": {
+        "animation": null,
+        "duration": 2.8,
+        "delay": 0,
+        "linear": false
+      },
+      "parts": [
+        {
+          "name": "paws",
+          "atlas": "parts",
+          "crop": [
+            963,
+            718,
+            51,
+            29
+          ],
+          "anchor": [
+            0.49,
+            0.483
+          ],
+          "motion": {
+            "animation": "rub",
+            "duration": 2.8,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "fx0",
+          "atlas": "effects",
+          "crop": [
+            971,
+            597,
+            44,
+            38
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "heartBeat",
+            "duration": 2.8,
+            "delay": -0.0,
+            "linear": false
+          }
+        }
+      ]
+    },
+    {
+      "key": "refill",
+      "name": "Monday Refill",
+      "duration": 2.4,
+      "crop": [
+        1097,
+        573,
+        229,
+        227
+      ],
+      "shadow": [
+        1129,
+        776,
+        157,
+        20
+      ],
+      "bodyMotion": {
+        "animation": "bounce2",
+        "duration": 2.4,
+        "delay": 0,
+        "linear": false
+      },
+      "shadowMotion": {
+        "animation": "shBounce",
+        "duration": 2.4,
+        "delay": 0,
+        "linear": false
+      },
+      "parts": [
+        {
+          "name": "fistL",
+          "atlas": "parts",
+          "crop": [
+            1156,
+            690,
+            38,
+            34
+          ],
+          "anchor": [
+            0.5,
+            0.971
+          ],
+          "motion": {
+            "animation": "pumpL",
+            "duration": 2.4,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "fistR",
+          "atlas": "parts",
+          "crop": [
+            1243,
+            686,
+            34,
+            32
+          ],
+          "anchor": [
+            0.5,
+            0.9690000000000001
+          ],
+          "motion": {
+            "animation": "pumpR",
+            "duration": 2.4,
+            "delay": 0,
+            "linear": false
+          }
+        },
+        {
+          "name": "fx0",
+          "atlas": "effects",
+          "crop": [
+            1100,
+            640,
+            24,
+            27
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "fall",
+            "duration": 2.4,
+            "delay": -0.0,
+            "linear": true
+          }
+        },
+        {
+          "name": "fx1",
+          "atlas": "effects",
+          "crop": [
+            1104,
+            687,
+            25,
+            29
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "fall",
+            "duration": 2.4,
+            "delay": -0.22,
+            "linear": true
+          }
+        },
+        {
+          "name": "fx2",
+          "atlas": "effects",
+          "crop": [
+            1113,
+            738,
+            26,
+            26
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "fall",
+            "duration": 2.4,
+            "delay": -0.44,
+            "linear": true
+          }
+        },
+        {
+          "name": "fx3",
+          "atlas": "effects",
+          "crop": [
+            1117,
+            602,
+            29,
+            30
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "fall",
+            "duration": 2.4,
+            "delay": -0.66,
+            "linear": true
+          }
+        },
+        {
+          "name": "fx4",
+          "atlas": "effects",
+          "crop": [
+            1176,
+            576,
+            27,
+            32
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "fall",
+            "duration": 2.4,
+            "delay": -0.88,
+            "linear": true
+          }
+        },
+        {
+          "name": "fx5",
+          "atlas": "effects",
+          "crop": [
+            1245,
+            581,
+            24,
+            28
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "fall",
+            "duration": 2.4,
+            "delay": -1.1,
+            "linear": true
+          }
+        },
+        {
+          "name": "fx6",
+          "atlas": "effects",
+          "crop": [
+            1269,
+            734,
+            27,
+            23
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "fall",
+            "duration": 2.4,
+            "delay": -1.32,
+            "linear": true
+          }
+        },
+        {
+          "name": "fx7",
+          "atlas": "effects",
+          "crop": [
+            1273,
+            597,
+            30,
+            30
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "fall",
+            "duration": 2.4,
+            "delay": -1.54,
+            "linear": true
+          }
+        },
+        {
+          "name": "fx8",
+          "atlas": "effects",
+          "crop": [
+            1284,
+            704,
+            24,
+            27
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "fall",
+            "duration": 2.4,
+            "delay": -1.76,
+            "linear": true
+          }
+        },
+        {
+          "name": "fx9",
+          "atlas": "effects",
+          "crop": [
+            1296,
+            634,
+            27,
+            25
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "fall",
+            "duration": 2.4,
+            "delay": -1.98,
+            "linear": true
+          }
+        },
+        {
+          "name": "fx10",
+          "atlas": "effects",
+          "crop": [
+            1297,
+            669,
+            25,
+            25
+          ],
+          "anchor": [
+            0.5,
+            0.5
+          ],
+          "motion": {
+            "animation": "fall",
+            "duration": 2.4,
+            "delay": -2.2,
+            "linear": true
+          }
+        }
+      ]
+    }
+  ],
+  "animations": {
+    "blink": {
+      "order": [
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.44,
+          "values": [
+            0,
+            0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.48,
+          "values": [
+            0,
+            0,
+            1,
+            0.1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.52,
+          "values": [
+            0,
+            0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "twinkle": {
+      "order": [
+        "scale",
+        "rotate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.25,
+          "values": [
+            0,
+            0,
+            0.8,
+            0.8,
+            -8.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0,
+            0,
+            1.15,
+            1.15,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.75,
+          "values": [
+            0,
+            0,
+            0.95,
+            0.95,
+            8.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": [
+        {
+          "t": 0.0,
+          "value": 1.0
+        },
+        {
+          "t": 0.25,
+          "value": 0.3
+        },
+        {
+          "t": 0.5,
+          "value": 1.0
+        },
+        {
+          "t": 0.75,
+          "value": 0.6
+        },
+        {
+          "t": 1.0,
+          "value": 1.0
+        }
+      ]
+    },
+    "breathe": {
+      "order": [
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0,
+            0,
+            1.012,
+            1.025,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "bounce2": {
+      "order": [
+        "translate",
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0.0,
+            1.03,
+            0.97,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.25,
+          "values": [
+            0,
+            -7.0,
+            0.98,
+            1.02,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0,
+            0.0,
+            1.03,
+            0.97,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.75,
+          "values": [
+            0,
+            -7.0,
+            0.98,
+            1.02,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0.0,
+            1.03,
+            0.97,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "shBounce": {
+      "order": [
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.25,
+          "values": [
+            0,
+            0,
+            0.85,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0,
+            0,
+            1.0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.75,
+          "values": [
+            0,
+            0,
+            0.85,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": [
+        {
+          "t": 0.0,
+          "value": 1.0
+        },
+        {
+          "t": 0.25,
+          "value": 0.7
+        },
+        {
+          "t": 0.5,
+          "value": 1.0
+        },
+        {
+          "t": 0.75,
+          "value": 0.7
+        },
+        {
+          "t": 1.0,
+          "value": 1.0
+        }
+      ]
+    },
+    "flapL": {
+      "order": [
+        "translate",
+        "rotate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.25,
+          "values": [
+            0,
+            -4.0,
+            1,
+            1,
+            -14.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "flapR": {
+      "order": [
+        "translate",
+        "rotate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.75,
+          "values": [
+            0,
+            -4.0,
+            1,
+            1,
+            14.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "puff": {
+      "order": [
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.25,
+          "values": [
+            0,
+            0,
+            1.05,
+            0.97,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.45,
+          "values": [
+            0,
+            0,
+            0.99,
+            1.02,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "pat": {
+      "order": [
+        "rotate",
+        "translate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.4,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0,
+            -4.0,
+            1,
+            1,
+            -16.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.6,
+          "values": [
+            0,
+            -1.0,
+            1,
+            1,
+            -4.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.7,
+          "values": [
+            0,
+            -4.0,
+            1,
+            1,
+            -16.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.8,
+          "values": [
+            0,
+            -1.0,
+            1,
+            1,
+            -4.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "wave": {
+      "order": [
+        "rotate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.2,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            -24.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.4,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            10.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.6,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            -24.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.8,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            10.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "waveLines": {
+      "order": [
+        "translate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0.0,
+            0.0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.2,
+          "values": [
+            -3.0,
+            -2.0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.4,
+          "values": [
+            2.0,
+            0.0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.6,
+          "values": [
+            -3.0,
+            -2.0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.8,
+          "values": [
+            2.0,
+            0.0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0.0,
+            0.0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": [
+        {
+          "t": 0.0,
+          "value": 1.0
+        },
+        {
+          "t": 0.2,
+          "value": 0.25
+        },
+        {
+          "t": 0.4,
+          "value": 1.0
+        },
+        {
+          "t": 0.6,
+          "value": 0.25
+        },
+        {
+          "t": 0.8,
+          "value": 1.0
+        },
+        {
+          "t": 1.0,
+          "value": 1.0
+        }
+      ]
+    },
+    "leanHi": {
+      "order": [
+        "rotate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            -2.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "startle": {
+      "order": [
+        "translate",
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0.0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.08,
+          "values": [
+            0,
+            0.0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.14,
+          "values": [
+            0,
+            -16.0,
+            0.95,
+            1.06,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.26,
+          "values": [
+            0,
+            -16.0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.36,
+          "values": [
+            0,
+            0.0,
+            1.07,
+            0.93,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.46,
+          "values": [
+            0,
+            0.0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0.0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "shStartle": {
+      "order": [
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.08,
+          "values": [
+            0,
+            0,
+            1.0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.18,
+          "values": [
+            0,
+            0,
+            0.75,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.26,
+          "values": [
+            0,
+            0,
+            0.75,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.36,
+          "values": [
+            0,
+            0,
+            1.0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": [
+        {
+          "t": 0.0,
+          "value": 1.0
+        },
+        {
+          "t": 0.08,
+          "value": 1.0
+        },
+        {
+          "t": 0.18,
+          "value": 0.5
+        },
+        {
+          "t": 0.26,
+          "value": 0.5
+        },
+        {
+          "t": 0.36,
+          "value": 1.0
+        },
+        {
+          "t": 1.0,
+          "value": 1.0
+        }
+      ]
+    },
+    "blink2": {
+      "order": [
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.55,
+          "values": [
+            0,
+            0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.58,
+          "values": [
+            0,
+            0,
+            1,
+            0.1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.61,
+          "values": [
+            0,
+            0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.67,
+          "values": [
+            0,
+            0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.7,
+          "values": [
+            0,
+            0,
+            1,
+            0.1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.73,
+          "values": [
+            0,
+            0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "shock": {
+      "order": [
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            0.4,
+            0.4,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.08,
+          "values": [
+            0,
+            0,
+            0.4,
+            0.4,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.14,
+          "values": [
+            0,
+            0,
+            1.25,
+            1.25,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.24,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.4,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.55,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": [
+        {
+          "t": 0.0,
+          "value": 0.0
+        },
+        {
+          "t": 0.08,
+          "value": 0.0
+        },
+        {
+          "t": 0.14,
+          "value": 1.0
+        },
+        {
+          "t": 0.24,
+          "value": 1.0
+        },
+        {
+          "t": 0.4,
+          "value": 1.0
+        },
+        {
+          "t": 0.55,
+          "value": 0.0
+        },
+        {
+          "t": 1.0,
+          "value": 0.0
+        }
+      ]
+    },
+    "tapChin": {
+      "order": [
+        "rotate",
+        "translate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.08,
+          "values": [
+            0,
+            -2.0,
+            1,
+            1,
+            -10.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.16,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.24,
+          "values": [
+            0,
+            -2.0,
+            1,
+            1,
+            -10.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.32,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.4,
+          "values": [
+            0,
+            -2.0,
+            1,
+            1,
+            -10.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.48,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.6,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "lookUp": {
+      "order": [
+        "translate",
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0.0,
+            0.0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.08,
+          "values": [
+            0.0,
+            0.0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.18,
+          "values": [
+            2.0,
+            -3.0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.76,
+          "values": [
+            2.0,
+            -3.0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.8,
+          "values": [
+            1.0,
+            -1.0,
+            1,
+            0.1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.86,
+          "values": [
+            0.0,
+            0.0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0.0,
+            0.0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "qBob": {
+      "order": [
+        "translate",
+        "rotate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.25,
+          "values": [
+            0,
+            -6.0,
+            1,
+            1,
+            -8.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.75,
+          "values": [
+            0,
+            -6.0,
+            1,
+            1,
+            8.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": [
+        {
+          "t": 0.0,
+          "value": 1.0
+        },
+        {
+          "t": 0.5,
+          "value": 0.7
+        },
+        {
+          "t": 1.0,
+          "value": 1.0
+        }
+      ]
+    },
+    "ponder": {
+      "order": [
+        "rotate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            2.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "tilt": {
+      "order": [
+        "rotate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.15,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            -5.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.4,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            -5.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.55,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            5.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.85,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            5.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "blinkFast": {
+      "order": [
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.4,
+          "values": [
+            0,
+            0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.43,
+          "values": [
+            0,
+            0,
+            1,
+            0.1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.46,
+          "values": [
+            0,
+            0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.49,
+          "values": [
+            0,
+            0,
+            1,
+            0.1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.52,
+          "values": [
+            0,
+            0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "qPop": {
+      "order": [
+        "scale",
+        "rotate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.12,
+          "values": [
+            0,
+            0,
+            1.25,
+            1.25,
+            -12.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.24,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            10.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.36,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.62,
+          "values": [
+            0,
+            0,
+            1.25,
+            1.25,
+            12.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.74,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            -10.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.86,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "tapCalc": {
+      "order": [
+        "translate",
+        "rotate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0.0,
+            0.0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.08,
+          "values": [
+            3.0,
+            3.0,
+            1,
+            1,
+            8.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.16,
+          "values": [
+            0.0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.24,
+          "values": [
+            3.0,
+            3.0,
+            1,
+            1,
+            8.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.32,
+          "values": [
+            0.0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.4,
+          "values": [
+            3.0,
+            3.0,
+            1,
+            1,
+            8.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.48,
+          "values": [
+            0.0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.56,
+          "values": [
+            3.0,
+            3.0,
+            1,
+            1,
+            8.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.64,
+          "values": [
+            0.0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.7,
+          "values": [
+            0.0,
+            0.0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0.0,
+            0.0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "calcBob": {
+      "order": [
+        "rotate",
+        "translate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.08,
+          "values": [
+            0,
+            1.0,
+            1,
+            1,
+            -2.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.16,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.24,
+          "values": [
+            0,
+            1.0,
+            1,
+            1,
+            -2.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.32,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.4,
+          "values": [
+            0,
+            1.0,
+            1,
+            1,
+            -2.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.48,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.56,
+          "values": [
+            0,
+            1.0,
+            1,
+            1,
+            -2.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.64,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "checkCalc": {
+      "order": [
+        "translate",
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0.0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.1,
+          "values": [
+            2.0,
+            3.0,
+            1,
+            0.85,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.56,
+          "values": [
+            2.0,
+            3.0,
+            1,
+            0.85,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.64,
+          "values": [
+            0,
+            0.0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.82,
+          "values": [
+            0,
+            0.0,
+            1,
+            0.1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.86,
+          "values": [
+            0,
+            0.0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0.0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "write": {
+      "order": [
+        "translate",
+        "rotate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0.0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.1,
+          "values": [
+            3.0,
+            1.0,
+            1,
+            1,
+            5.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.2,
+          "values": [
+            6.0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.3,
+          "values": [
+            9.0,
+            1.0,
+            1,
+            1,
+            5.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.4,
+          "values": [
+            12.0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.52,
+          "values": [
+            4.0,
+            4.0,
+            1,
+            1,
+            -4.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.62,
+          "values": [
+            7.0,
+            5.0,
+            1,
+            1,
+            5.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.72,
+          "values": [
+            10.0,
+            4.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.86,
+          "values": [
+            2.0,
+            1.0,
+            1,
+            1,
+            -3.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0.0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "headBob": {
+      "order": [
+        "rotate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.25,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            -1.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.75,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            1.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "coinDrop": {
+      "order": [
+        "translate",
+        "scale",
+        "rotate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0.0,
+            -20.0,
+            0.9,
+            0.9,
+            -20.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.12,
+          "values": [
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.18,
+          "values": [
+            0.0,
+            -3.0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.24,
+          "values": [
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.42,
+          "values": [
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.56,
+          "values": [
+            6.0,
+            18.0,
+            0.6,
+            0.6,
+            30.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.62,
+          "values": [
+            7.0,
+            22.0,
+            0.4,
+            0.4,
+            40.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            7.0,
+            22.0,
+            0.4,
+            0.4,
+            40.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": [
+        {
+          "t": 0.0,
+          "value": 0.0
+        },
+        {
+          "t": 0.12,
+          "value": 1.0
+        },
+        {
+          "t": 0.24,
+          "value": 1.0
+        },
+        {
+          "t": 0.42,
+          "value": 1.0
+        },
+        {
+          "t": 0.56,
+          "value": 1.0
+        },
+        {
+          "t": 0.62,
+          "value": 0.0
+        },
+        {
+          "t": 1.0,
+          "value": 0.0
+        }
+      ]
+    },
+    "hugNod": {
+      "order": [
+        "scale",
+        "translate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0.0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.52,
+          "values": [
+            0,
+            0.0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.6,
+          "values": [
+            0,
+            1.0,
+            1.04,
+            0.96,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.68,
+          "values": [
+            0,
+            0.0,
+            0.99,
+            1.02,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.8,
+          "values": [
+            0,
+            0.0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0.0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "saveSpark": {
+      "order": [
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            0.4,
+            0.4,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.56,
+          "values": [
+            0,
+            0,
+            0.4,
+            0.4,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.64,
+          "values": [
+            0,
+            0,
+            1.25,
+            1.25,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.76,
+          "values": [
+            0,
+            0,
+            0.95,
+            0.95,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.9,
+          "values": [
+            0,
+            0,
+            0.6,
+            0.6,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            0.6,
+            0.6,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": [
+        {
+          "t": 0.0,
+          "value": 0.0
+        },
+        {
+          "t": 0.56,
+          "value": 0.0
+        },
+        {
+          "t": 0.64,
+          "value": 1.0
+        },
+        {
+          "t": 0.76,
+          "value": 1.0
+        },
+        {
+          "t": 0.9,
+          "value": 0.0
+        },
+        {
+          "t": 1.0,
+          "value": 0.0
+        }
+      ]
+    },
+    "grow1": {
+      "order": [
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1,
+            0.1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.04,
+          "values": [
+            0,
+            0,
+            1,
+            0.1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.16,
+          "values": [
+            0,
+            0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.92,
+          "values": [
+            0,
+            0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1,
+            0.1,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "grow2": {
+      "order": [
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1,
+            0.1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.16,
+          "values": [
+            0,
+            0,
+            1,
+            0.1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.28,
+          "values": [
+            0,
+            0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.92,
+          "values": [
+            0,
+            0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1,
+            0.1,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "grow3": {
+      "order": [
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1,
+            0.1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.28,
+          "values": [
+            0,
+            0,
+            1,
+            0.1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.4,
+          "values": [
+            0,
+            0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.92,
+          "values": [
+            0,
+            0,
+            1,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1,
+            0.1,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "proud": {
+      "order": [
+        "scale",
+        "translate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0.0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.44,
+          "values": [
+            0,
+            0.0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.54,
+          "values": [
+            0,
+            -6.0,
+            0.98,
+            1.04,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.62,
+          "values": [
+            0,
+            0.0,
+            1.04,
+            0.96,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.7,
+          "values": [
+            0,
+            -3.0,
+            0.99,
+            1.02,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.8,
+          "values": [
+            0,
+            0.0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0.0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "clickShut": {
+      "order": [
+        "translate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            -8.0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.14,
+          "values": [
+            0,
+            -8.0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.28,
+          "values": [
+            0,
+            1.0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.32,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.84,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            -8.0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "clickSquash": {
+      "order": [
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.26,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.32,
+          "values": [
+            0,
+            0,
+            1.04,
+            0.95,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.4,
+          "values": [
+            0,
+            0,
+            0.99,
+            1.02,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "flagWave": {
+      "order": [
+        "skewY",
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1,
+            0,
+            0,
+            0.0
+          ]
+        },
+        {
+          "t": 0.25,
+          "values": [
+            0,
+            0,
+            0.88,
+            1,
+            0,
+            0,
+            10.0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0,
+            0,
+            1.0,
+            1,
+            0,
+            0,
+            0.0
+          ]
+        },
+        {
+          "t": 0.75,
+          "values": [
+            0,
+            0,
+            0.92,
+            1,
+            0,
+            0,
+            -8.0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1,
+            0,
+            0,
+            0.0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "cheer": {
+      "order": [
+        "rotate",
+        "translate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.25,
+          "values": [
+            0,
+            -3.0,
+            1,
+            1,
+            -16.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.75,
+          "values": [
+            0,
+            -3.0,
+            1,
+            1,
+            -16.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "stand": {
+      "order": [
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.25,
+          "values": [
+            0,
+            0,
+            0.99,
+            1.02,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.75,
+          "values": [
+            0,
+            0,
+            0.99,
+            1.02,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "dart": {
+      "order": [
+        "translate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0.0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.1,
+          "values": [
+            0.0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.18,
+          "values": [
+            -3.0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.36,
+          "values": [
+            -3.0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.45,
+          "values": [
+            0.0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.55,
+          "values": [
+            0.0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.64,
+          "values": [
+            3.0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.82,
+          "values": [
+            3.0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.9,
+          "values": [
+            0.0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0.0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "fidL": {
+      "order": [
+        "translate",
+        "rotate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0.0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.25,
+          "values": [
+            2.0,
+            -1.0,
+            1,
+            1,
+            10.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0.0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0.0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "fidR": {
+      "order": [
+        "translate",
+        "rotate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0.0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0.0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.75,
+          "values": [
+            -2.0,
+            -1.0,
+            1,
+            1,
+            -10.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0.0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "drip": {
+      "order": [
+        "translate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            -4.0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.15,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.7,
+          "values": [
+            0,
+            14.0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.9,
+          "values": [
+            0,
+            18.0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            18.0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": [
+        {
+          "t": 0.0,
+          "value": 0.0
+        },
+        {
+          "t": 0.15,
+          "value": 1.0
+        },
+        {
+          "t": 0.7,
+          "value": 1.0
+        },
+        {
+          "t": 0.9,
+          "value": 0.0
+        },
+        {
+          "t": 1.0,
+          "value": 0.0
+        }
+      ]
+    },
+    "sway": {
+      "order": [
+        "rotate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            -1.5,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            1.5,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            -1.5,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "shakePack": {
+      "order": [
+        "rotate",
+        "translate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.26,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.3,
+          "values": [
+            0,
+            -3.0,
+            1,
+            1,
+            -12.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.35,
+          "values": [
+            0,
+            -2.0,
+            1,
+            1,
+            9.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.4,
+          "values": [
+            0,
+            -3.0,
+            1,
+            1,
+            -12.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.45,
+          "values": [
+            0,
+            -2.0,
+            1,
+            1,
+            9.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0,
+            -3.0,
+            1,
+            1,
+            -12.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.55,
+          "values": [
+            0,
+            -2.0,
+            1,
+            1,
+            9.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.6,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            -3.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.66,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "shakeLines": {
+      "order": [],
+      "transforms": [],
+      "opacities": [
+        {
+          "t": 0.0,
+          "value": 0.0
+        },
+        {
+          "t": 0.28,
+          "value": 0.0
+        },
+        {
+          "t": 0.32,
+          "value": 1.0
+        },
+        {
+          "t": 0.58,
+          "value": 1.0
+        },
+        {
+          "t": 0.62,
+          "value": 0.0
+        },
+        {
+          "t": 1.0,
+          "value": 0.0
+        }
+      ]
+    },
+    "sigh": {
+      "order": [
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.62,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.72,
+          "values": [
+            0,
+            0,
+            1.04,
+            0.95,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.86,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "fistShake": {
+      "order": [
+        "translate",
+        "rotate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.25,
+          "values": [
+            0,
+            -5.0,
+            1,
+            1,
+            -6.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.75,
+          "values": [
+            0,
+            -5.0,
+            1,
+            1,
+            6.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "tremble": {
+      "order": [
+        "translate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0.0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.1,
+          "values": [
+            -1.5,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.2,
+          "values": [
+            1.5,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.3,
+          "values": [
+            -1.5,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.4,
+          "values": [
+            1.5,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            -1.5,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.6,
+          "values": [
+            1.5,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.7,
+          "values": [
+            -1.5,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.8,
+          "values": [
+            1.5,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.9,
+          "values": [
+            -1.5,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0.0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "fume": {
+      "order": [
+        "rotate",
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.25,
+          "values": [
+            0,
+            0,
+            1.05,
+            1.05,
+            -8.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0,
+            0,
+            0.97,
+            0.97,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.75,
+          "values": [
+            0,
+            0,
+            1.05,
+            1.05,
+            8.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "dropL": {
+      "order": [
+        "translate",
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            6.0,
+            4.0,
+            0.6,
+            0.6,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.2,
+          "values": [
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.7,
+          "values": [
+            -6.0,
+            4.0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            -9.0,
+            8.0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": [
+        {
+          "t": 0.0,
+          "value": 0.0
+        },
+        {
+          "t": 0.2,
+          "value": 1.0
+        },
+        {
+          "t": 0.7,
+          "value": 1.0
+        },
+        {
+          "t": 1.0,
+          "value": 0.0
+        }
+      ]
+    },
+    "dropR": {
+      "order": [
+        "translate",
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            -6.0,
+            4.0,
+            0.6,
+            0.6,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.2,
+          "values": [
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.7,
+          "values": [
+            6.0,
+            4.0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            9.0,
+            8.0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": [
+        {
+          "t": 0.0,
+          "value": 0.0
+        },
+        {
+          "t": 0.2,
+          "value": 1.0
+        },
+        {
+          "t": 0.7,
+          "value": 1.0
+        },
+        {
+          "t": 1.0,
+          "value": 0.0
+        }
+      ]
+    },
+    "blanketBreath": {
+      "order": [
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0,
+            0,
+            1.025,
+            1.06,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "zFloat": {
+      "order": [
+        "translate",
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            -8.0,
+            12.0,
+            0.6,
+            0.6,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.2,
+          "values": [
+            -4.0,
+            6.0,
+            0.85,
+            0.85,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.75,
+          "values": [
+            2.0,
+            -4.0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            6.0,
+            -12.0,
+            1.1,
+            1.1,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": [
+        {
+          "t": 0.0,
+          "value": 0.0
+        },
+        {
+          "t": 0.2,
+          "value": 1.0
+        },
+        {
+          "t": 0.75,
+          "value": 1.0
+        },
+        {
+          "t": 1.0,
+          "value": 0.0
+        }
+      ]
+    },
+    "rub": {
+      "order": [
+        "translate",
+        "rotate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0.0,
+            0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.25,
+          "values": [
+            -2.0,
+            0,
+            1,
+            1,
+            -5.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.75,
+          "values": [
+            2.0,
+            0,
+            1,
+            1,
+            5.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0.0,
+            0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "heartBeat": {
+      "order": [
+        "translate",
+        "scale"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0.0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.12,
+          "values": [
+            0,
+            -2.0,
+            1.22,
+            1.22,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.24,
+          "values": [
+            0,
+            -2.0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.36,
+          "values": [
+            0,
+            -3.0,
+            1.18,
+            1.18,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0,
+            -4.0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0.0,
+            1.0,
+            1.0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "contentSway": {
+      "order": [
+        "rotate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            -1.5,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            1.5,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            -1.5,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "pumpL": {
+      "order": [
+        "translate",
+        "rotate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.25,
+          "values": [
+            0,
+            -9.0,
+            1,
+            1,
+            -12.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "pumpR": {
+      "order": [
+        "translate",
+        "rotate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.5,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 0.75,
+          "values": [
+            0,
+            -9.0,
+            1,
+            1,
+            12.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            0.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": []
+    },
+    "fall": {
+      "order": [
+        "translate",
+        "rotate"
+      ],
+      "transforms": [
+        {
+          "t": 0.0,
+          "values": [
+            0,
+            -14.0,
+            1,
+            1,
+            0.0,
+            0,
+            0
+          ]
+        },
+        {
+          "t": 1.0,
+          "values": [
+            0,
+            18.0,
+            1,
+            1,
+            60.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "opacities": [
+        {
+          "t": 0.0,
+          "value": 0.0
+        },
+        {
+          "t": 0.15,
+          "value": 1.0
+        },
+        {
+          "t": 0.8,
+          "value": 1.0
+        },
+        {
+          "t": 1.0,
+          "value": 0.0
+        }
+      ]
+    }
+  }
+}
