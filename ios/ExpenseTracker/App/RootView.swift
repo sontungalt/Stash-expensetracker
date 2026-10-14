@@ -41,10 +41,10 @@ struct RootView: View {
         let t = Theme.current(scheme)
         TabView(selection: $tab) {
             Tab("Overview", systemImage: "square.grid.2x2.fill", value: AppTab.overview) {
-                screen { OverviewView(onAdd: { sheet = .add(kind: $0, category: $1) }, onExitSample: exitSample) }
+                screen { OverviewView(onAdd: { sheet = .add(kind: $0, category: $1) }, onExitSample: exitSample, refreshDate: clockRevision) }
             }
             Tab("Activity", systemImage: "list.bullet", value: AppTab.activity) {
-                screen { ActivityView(onEdit: { sheet = .edit($0) }, onDelete: delete) }
+                screen { ActivityView(onEdit: { sheet = .edit($0) }, onDelete: delete, refreshDate: clockRevision) }
             }
         }
         .tint(t.ink)
@@ -108,6 +108,7 @@ struct RootView: View {
         let t = Theme.current(scheme)
         return NavigationStack {
             content()
+                .refreshable { await refresh() }
                 .safeAreaInset(edge: .top) {
                     if !samples.isEmpty { SampleBanner(onExit: exitSample).padding(.horizontal, 20) }
                 }
@@ -127,6 +128,14 @@ struct RootView: View {
                 .toolbar(.hidden, for: .tabBar)
                 .background(t.bg.ignoresSafeArea())
         }
+    }
+
+    private func refresh() async {
+        // Queries already observe local transactions. Refresh the clock-dependent
+        // totals and companion without recreating the tabs or their filters.
+        deletionUndo.expire()
+        clockRevision = .now
+        stash.refresh(balanceSnapshot)
     }
 
     private func delete(_ entry: Entry) {

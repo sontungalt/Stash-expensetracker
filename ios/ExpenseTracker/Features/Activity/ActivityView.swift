@@ -4,6 +4,7 @@ import SwiftUI
 struct ActivityView: View {
     let onEdit: (Entry) -> Void
     let onDelete: (Entry) -> Void
+    let refreshDate: Date
     @Query(sort: \Transaction.date, order: .reverse) private var rows: [Transaction]
     @Environment(\.colorScheme) private var scheme
     @AppStorage("weeklyAllowanceAmount") private var allowanceText = "50"
@@ -16,7 +17,7 @@ struct ActivityView: View {
 
     var body: some View {
         TimelineView(.everyMinute) { _ in
-            activity(now: .now)
+            activity(now: max(.now, refreshDate))
         }
         .sheet(isPresented: $editingBalance) {
             MoneyLeftEditor(amount: currentTotals(now: .now).left) { target in
@@ -89,8 +90,9 @@ struct ActivityView: View {
             }
         }
         .listStyle(.plain)
+        .scrollBounceBehavior(.always, axes: .vertical)
         .scrollContentBackground(.hidden)
-        .searchable(text: $filter.search, prompt: "Search")
+        .searchable(text: $filter.search, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search")
         .navigationTitle("Activity")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {

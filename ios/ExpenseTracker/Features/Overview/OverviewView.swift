@@ -5,6 +5,7 @@ import UIKit
 struct OverviewView: View {
     let onAdd: (Kind, String?) -> Void
     let onExitSample: () -> Void
+    let refreshDate: Date
     @Query(sort: \Transaction.date, order: .reverse) private var rows: [Transaction]
     @Environment(\.modelContext) private var context
     @Environment(\.colorScheme) private var scheme
@@ -25,7 +26,7 @@ struct OverviewView: View {
         let all = rows.map(\.entry)
         TimelineView(.everyMinute) { _ in
             // The scheduled tick can precede a balance correction saved during this minute.
-            content(all, t, now: .now)
+            content(all, t, now: max(.now, refreshDate))
         }
         .id(clockRevision)
         .onChange(of: scenePhase) { _, phase in
@@ -149,6 +150,7 @@ struct OverviewView: View {
             .padding(.horizontal, 20)
             .padding(.bottom, 24)
         }
+        .scrollBounceBehavior(.always, axes: .vertical)
     }
 
     private func currentTotals(_ entries: [Entry], now: Date) -> Totals {
